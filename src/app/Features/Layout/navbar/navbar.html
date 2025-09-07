@@ -1,1 +1,61 @@
-<p>navbar works!</p>
+<nav class="navbar navbar-expand-lg" [class.scrolled]="isScrolled">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">AL <span>Aik</span></a>
+    <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" [class.show]="!isCollapsed">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" (click)="closeNavbar()">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="closeNavbar()">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="closeNavbar()">Gallery</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" (click)="closeNavbar()">
+            Landscaping
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" (click)="closeNavbar()">Soft & Hard Landscape</a></li>
+            <li><a class="dropdown-item" (click)="closeNavbar()">Pergola & Gazebo</a></li>
+            <li><a class="dropdown-item" (click)="closeNavbar()">Irrigation & Sprinklers</a></li>
+            <li><a class="dropdown-item" (click)="closeNavbar()">Landscape Lighting</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" (click)="closeNavbar()">
+            Swimming Pool
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" (click)="closeNavbar()">Swimming Pools</a></li>
+            <li><a class="dropdown-item" (click)="closeNavbar()">Water Features & Fountains</a></li>
+            <li><a class="dropdown-item" (click)="closeNavbar()">Jacuzzi & Spa</a></li>
+            <li><a class="dropdown-item" (click)="closeNavbar()">Pools & Animation Lighting</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" (click)="closeNavbar()">
+            Specialty Services
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" (click)="closeNavbar()">Environmental Services</a></li>
+            <li><a class="dropdown-item" (click)="closeNavbar()">Digital IoT Solutions</a></li>
+            <li><a class="dropdown-item" (click)="closeNavbar()">3D Design & Visualization</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="closeNavbar()">Contact Us</a>
+        </li>
+      </ul>
+      <div class="social-icons">
+        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </div>
+</nav>
