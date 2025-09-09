@@ -1,11 +1,18 @@
-<nav class="navbar navbar-expand-lg" [class.scrolled]="isScrolled">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">AL <span>Aik</span></a>
-    <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
-      <i class="fas fa-bars"></i>
+<nav class="navbar" [class.scrolled]="isScrolled">
+  <div class="nav-container">
+    <a class="navbar-brand" href="#">
+      <span class="logo-text">AL</span>
+      <span class="logo-accent">Aik</span>
+    </a>
+    
+    <button class="navbar-toggler" (click)="toggleNavbar()">
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
+      <span class="toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" [class.show]="!isCollapsed">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    
+    <div class="navbar-collapse" [class.show]="!isCollapsed">
+      <ul class="navbar-nav">
         <li class="nav-item">
           <a class="nav-link" (click)="closeNavbar()">Home</a>
         </li>
@@ -15,46 +22,69 @@
         <li class="nav-item">
           <a class="nav-link" (click)="closeNavbar()">Gallery</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" (click)="closeNavbar()">
+        
+        <!-- Landscaping Dropdown -->
+        <li class="nav-item dropdown" 
+            (mouseenter)="toggleDropdown('landscaping')" 
+            (mouseleave)="activeDropdown = null">
+          <a class="nav-link dropdown-toggle" (click)="toggleDropdown('landscaping')">
             Landscaping
+            <i class="dropdown-arrow" [class.rotated]="isDropdownOpen('landscaping')">▼</i>
           </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" (click)="closeNavbar()">Soft & Hard Landscape</a></li>
-            <li><a class="dropdown-item" (click)="closeNavbar()">Pergola & Gazebo</a></li>
-            <li><a class="dropdown-item" (click)="closeNavbar()">Irrigation & Sprinklers</a></li>
-            <li><a class="dropdown-item" (click)="closeNavbar()">Landscape Lighting</a></li>
+          <ul class="dropdown-menu" [class.show]="isDropdownOpen('landscaping')">
+            <li><a class="dropdown-item" (click)="closeNavbar()">Soft & Hard Landscape <i class="item-arrow">→</i></a></li>
+            <li><a class="dropdown-item" (click)="closeNavbar()">Pergola & Gazebo <i class="item-arrow">→</i></a></li>
+            <li><a class="dropdown-item" (click)="closeNavbar()">Irrigation & Sprinklers <i class="item-arrow">→</i></a></li>
+            <li><a class="dropdown-item" (click)="closeNavbar()">Landscape Lighting <i class="item-arrow">→</i></a></li>
           </ul>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" (click)="closeNavbar()">
+        
+        <!-- Swimming Pool Dropdown -->
+        <li class="nav-item dropdown" 
+            (mouseenter)="toggleDropdown('swimming')" 
+            (mouseleave)="activeDropdown = null">
+          <a class="nav-link dropdown-toggle" (click)="toggleDropdown('swimming')">
             Swimming Pool
+            <i class="dropdown-arrow" [class.rotated]="isDropdownOpen('swimming')">▼</i>
           </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" (click)="closeNavbar()">Swimming Pools</a></li>
-            <li><a class="dropdown-item" (click)="closeNavbar()">Water Features & Fountains</a></li>
-            <li><a class="dropdown-item" (click)="closeNavbar()">Jacuzzi & Spa</a></li>
-            <li><a class="dropdown-item" (click)="closeNavbar()">Pools & Animation Lighting</a></li>
+          <ul class="dropdown-menu" [class.show]="isDropdownOpen('swimming')">
+            <li><a class="dropdown-item" (click)="closeNavbar()">Swimming Pools <i class="item-arrow">→</i></a></li>
+            <li><a class="dropdown-item" (click)="closeNavbar()">Water Features & Fountains <i class="item-arrow">→</i></a></li>
+            <li><a class="dropdown-item" (click)="closeNavbar()">Jacuzzi & Spa <i class="item-arrow">→</i></a></li>
+            <li><a class="dropdown-item" (click)="closeNavbar()">Pools & Animation Lighting <i class="item-arrow">→</i></a></li>
           </ul>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" (click)="closeNavbar()">
+        
+        <!-- Specialty Services Dropdown -->
+        <li class="nav-item dropdown" 
+            (mouseenter)="toggleDropdown('services')" 
+            (mouseleave)="activeDropdown = null">
+          <a class="nav-link dropdown-toggle" (click)="toggleDropdown('services')">
             Specialty Services
+            <i class="dropdown-arrow" [class.rotated]="isDropdownOpen('services')">▼</i>
           </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" (click)="closeNavbar()">Environmental Services</a></li>
-            <li><a class="dropdown-item" (click)="closeNavbar()">Digital IoT Solutions</a></li>
-            <li><a class="dropdown-item" (click)="closeNavbar()">3D Design & Visualization</a></li>
+          <ul class="dropdown-menu" [class.show]="isDropdownOpen('services')">
+            <li><a class="dropdown-item" (click)="closeNavbar()">Environmental Services <i class="item-arrow">→</i></a></li>
+            <li><a class="dropdown-item" (click)="closeNavbar()">Digital IoT Solutions <i class="item-arrow">→</i></a></li>
+            <li><a class="dropdown-item" (click)="closeNavbar()">3D Design & Visualization <i class="item-arrow">→</i></a></li>
           </ul>
         </li>
+        
         <li class="nav-item">
           <a class="nav-link" (click)="closeNavbar()">Contact Us</a>
         </li>
       </ul>
-      <div class="social-icons">
-        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+      
+      <div class="social-icons ps-5">
+        <a href="#" class="social-icon">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#" class="social-icon">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#" class="social-icon">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
       </div>
     </div>
   </div>
