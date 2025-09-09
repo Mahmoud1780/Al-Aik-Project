@@ -10,7 +10,10 @@
 /node_modules
 npm-debug.log
 yarn-error.log
-/src/assets
+
+# Assets folder
+/src/assets/
+
 # IDEs and editors
 .idea/
 .project
