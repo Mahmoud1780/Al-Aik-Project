@@ -24,7 +24,6 @@
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
-
 .navbar.scrolled {
   background-color: rgba(255, 255, 255, 0.95);
   box-shadow: var(--shadow);
@@ -36,7 +35,7 @@
   align-items: center;
   justify-content: space-between;
   /* max-width: 1200px; */
-  margin: 0 auto;
+  margin: 0 30px;
 }
 
 /* Brand logo */
@@ -47,6 +46,7 @@
   text-decoration: none;
   display: flex;
   align-items: center;
+  margin-right: 100px;
 }
 
 .navbar.scrolled .navbar-brand {
@@ -174,7 +174,7 @@
   display: flex;
   align-items: center;
   gap: 0.8rem;
-  margin-left: 50px;
+  margin-left: 100px;
 }
 
 .social-icon {
@@ -234,6 +234,11 @@
 @media (max-width: 1159px) {
   .navbar {
     padding: 1rem;
+    display: flex;
+    justify-content: center;
+  }
+  .navbar-brand{
+    margin: 0 5px;
   }
   
   .navbar.scrolled {
