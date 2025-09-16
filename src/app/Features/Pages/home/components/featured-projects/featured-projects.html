@@ -1,0 +1,35 @@
+<!-- featured-projects.component.html -->
+<div class="featured-projects">
+  <!-- Filter Tabs -->
+  <div class="filter-tabs mb-4">
+    <div class="tab-buttons d-flex justify-content-center">
+      @for (tab of filterTabs; track tab.key) {
+        <button 
+          type="button"
+          class="tab-btn"
+          [class.active]="activeFilter() === tab.key"
+          (click)="setActiveFilter(tab.key)">
+          {{ tab.label }}
+        </button>
+      }
+    </div>
+  </div>
+
+  <!-- Projects Grid -->
+  <div class="projects-grid">
+    <div class="row g-4">
+      @for (project of filteredProjects(); track project.id) {
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <app-project-card [project]="project"></app-project-card>
+        </div>
+      }
+    </div>
+  </div>
+
+  <!-- Empty State -->
+  @if (filteredProjects().length === 0) {
+    <div class="empty-state text-center py-5">
+      <p class="text-muted">No projects found for the selected category.</p>
+    </div>
+  }
+</div>

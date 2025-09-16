@@ -1,0 +1,30 @@
+<!-- project-card.component.html -->
+<div class="project-card">
+  <div class="card-image-container">
+    <img 
+      [src]="project.image" 
+      [alt]="project.title"
+      class="card-image"
+      (error)="onImageError($event)">
+    
+    <!-- Hover overlay with button -->
+    <div class="card-overlay">
+      <button 
+        type="button" 
+        class="view-project-btn"
+        (click)="viewProject()">
+        <svg class="eye-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="2" fill="none"/>
+          <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+        </svg>
+        View Project
+      </button>
+    </div>
+  </div>
+  
+  <!-- Card content -->
+  <div class="card-content">
+    <h3 class="card-title">{{ project.title }}</h3>
+    <p class="card-description">{{ project.description }}</p>
+  </div>
+</div>
