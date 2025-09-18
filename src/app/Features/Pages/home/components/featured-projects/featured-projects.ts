@@ -16,19 +16,19 @@ export class FeaturedProjects {
   projects = signal<Project[]>([
     {
       id: 1,
-      title: 'Luxury Infinity Pool',
+      title: 'Park Gate Residence',
       description: 'Contemporary infinity pool with stunning water features',
-      image: 'assets/images/projects/luxury-infinity-pool.jpg',
-      category: 'pools',
-      slug: 'luxury-infinity-pool'
+      image: 'assets/Projects/Landscape/park gate/main.jpg',
+      category: 'landscaping',
+      slug: 'Park Gate Residence'
     },
     {
       id: 2,
-      title: 'Garden Paradise',
+      title: 'Lake Tower',
       description: 'Complete landscape transformation with pergola and lighting',
-      image: 'assets/images/projects/garden-paradise.jpg',
+      image: 'assets/Projects/Landscape/Lake tower/main.JPG',
       category: 'landscaping',
-      slug: 'garden-paradise'
+      slug: 'Lake Tower'
     },
     {
       id: 3,
@@ -40,27 +40,27 @@ export class FeaturedProjects {
     },
     {
       id: 4,
-      title: 'Modern Pool Oasis',
-      description: 'Sleek modern pool design with integrated spa',
-      image: 'assets/images/projects/modern-pool-oasis.jpg',
+      title: 'Burj Al Nujoom',
+      description: 'Elegant Health Club Oasis with Panoramic Downtown Dubai Views',
+      image: 'assets/Projects/swimming/Al nujoom tower/main.jpg',
       category: 'pools',
-      slug: 'modern-pool-oasis'
+      slug: 'Burj Al Nujoom'
     },
     {
       id: 5,
       title: 'Resort Style Pool',
       description: 'Tropical resort-style pool with waterfall features',
       image: 'assets/images/projects/resort-style-pool.jpg',
-      category: 'pools',
+      category: 'landscaping',
       slug: 'resort-style-pool'
     },
     {
       id: 6,
-      title: 'Botanical Landscape',
-      description: 'Extensive botanical garden with native plant selections',
-      image: 'assets/images/projects/botanical-landscape.jpg',
-      category: 'landscaping',
-      slug: 'botanical-landscape'
+      title: 'Al Safa Community School',
+      description: 'Modern educational aquatic facility with dual swimming pools and comprehensive amenities',
+      image: 'assets/Projects/swimming/Al SAFA/main.jpg',
+      category: 'pools',
+      slug: 'Al Safa Community School'
     }
   ]);
 

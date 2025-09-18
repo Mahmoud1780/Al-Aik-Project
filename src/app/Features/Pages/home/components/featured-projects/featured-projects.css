@@ -1,12 +1,16 @@
 /* featured-projects.component.css */
 
 .featured-projects {
-  padding: 2rem 0;
+  padding: 1rem 0;
 }
 
 /* Filter Tabs Styling */
 .filter-tabs {
   margin-bottom: 3rem;
+}
+.tab-box{
+  background-color: rgb(247, 243, 230);
+  border-radius: 10px;
 }
 
 .tab-buttons {
@@ -25,7 +29,7 @@
   font-size: 0.95rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  border-radius: 25px;
+  border-radius: 10px;
   position: relative;
   outline: none;
 }
@@ -61,6 +65,16 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .filter-tabs{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+  .tab-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
   .tab-buttons {
     flex-direction: column;
     width: 200px;
