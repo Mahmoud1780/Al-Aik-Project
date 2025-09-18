@@ -4,10 +4,13 @@ import { SwimmingPoolSection } from '../components/swimming-pool-section/swimmin
 import { LandscapeSection } from '../components/landscape-section/landscape-section';
 import { SpecialtyServiceSection } from '../components/specialty-service-section/specialty-service-section';
 import { FeaturedProjects } from '../components/featured-projects/featured-projects';
+import { WhySection } from '../components/why-section/why-section';
+import { StatisticsSection } from '../components/statistics-section/statistics-section';
+import { ClientTestimonial } from '../components/client-testimonial/client-testimonial';
 
 @Component({
   selector: 'app-home-page',
-  imports: [HeroSection,SwimmingPoolSection,LandscapeSection,SpecialtyServiceSection,FeaturedProjects],
+  imports: [HeroSection,SwimmingPoolSection,LandscapeSection,SpecialtyServiceSection,FeaturedProjects,WhySection,StatisticsSection,ClientTestimonial],
   templateUrl: './home-page.html',
   styleUrl: './home-page.css'
 })

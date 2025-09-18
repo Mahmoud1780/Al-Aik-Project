@@ -24,7 +24,7 @@
   <!-- Project Content -->
   @else if (project(); as proj) {
     <!-- Hero Section with Fixed Header -->
-    <div class="project-hero" [style.background-image]="'url(' + proj.image + ')'">
+    <div class="project-hero" [style]="getHeroStyles(proj.image)">
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <div class="container">
@@ -43,7 +43,7 @@
     </div>
 
     <!-- Fixed Header (appears on scroll) -->
-    <div class="fixed-header" [class.visible]="isHeaderFixed()">
+    <div class="fixed-header">
       <div class="container">
         <div class="fixed-header-content">
           <div class="project-mini-info">
@@ -75,20 +75,8 @@
             <div class="col-lg-8">
               <h2>Key Features</h2>
               <ul class="features-list">
-                @if (proj.category === 'pools') {
-                  <li>60-foot infinity edge design</li>
-                  <li>Integrated spa and heating system</li>
-                  <li>Custom underwater LED lighting</li>
-                  <li>Natural stone coping and decking</li>
-                  <li>Automated chemical balancing system</li>
-                  <li>Energy-efficient filtration system</li>
-                } @else {
-                  <li>Native plant selection and installation</li>
-                  <li>Sustainable irrigation systems</li>
-                  <li>Hardscape design and construction</li>
-                  <li>Outdoor lighting integration</li>
-                  <li>Custom pergola and structures</li>
-                  <li>Ongoing maintenance planning</li>
+                @for (feature of proj.keyFeatures; track feature) {
+                  <li>{{ feature }}</li>
                 }
               </ul>
             </div>
@@ -104,7 +92,7 @@
                     </svg>
                     <div>
                       <span class="label">Location</span>
-                      <span class="value">Beverly Hills, CA</span>
+                      <span class="value">{{ proj.location }}</span>
                     </div>
                   </div>
                   <div class="info-item">
@@ -116,7 +104,7 @@
                     </svg>
                     <div>
                       <span class="label">Completed</span>
-                      <span class="value">March 2024</span>
+                      <span class="value">{{ proj.completed }}</span>
                     </div>
                   </div>
                   <div class="info-item">
@@ -126,18 +114,7 @@
                     </svg>
                     <div>
                       <span class="label">Duration</span>
-                      <span class="value">8 weeks</span>
-                    </div>
-                  </div>
-                  <div class="info-item">
-                    <svg class="info-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
-                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2"/>
-                      <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
-                      <path d="m22 21-3-3m0 0a5 5 0 1 0-7-7 5 5 0 0 0 7 7z" stroke="currentColor" stroke-width="2"/>
-                    </svg>
-                    <div>
-                      <span class="label">Team Size</span>
-                      <span class="value">12 specialists</span>
+                      <span class="value">{{ proj.duration }}</span>
                     </div>
                   </div>
                 </div>
@@ -190,8 +167,8 @@
           </button>
           
           <img 
-            [src]="projectGallery()[selectedImageIndex()]?.url" 
-            [alt]="projectGallery()[selectedImageIndex()]?.alt"
+            [src]="projectGallery()[selectedImageIndex()].url" 
+            [alt]="projectGallery()[selectedImageIndex()].alt"
             class="modal-image">
           
           <button class="modal-nav modal-next" (click)="nextImage()">

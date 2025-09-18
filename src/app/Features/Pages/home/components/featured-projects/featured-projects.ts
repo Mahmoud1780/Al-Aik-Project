@@ -16,51 +16,75 @@ export class FeaturedProjects {
   projects = signal<Project[]>([
     {
       id: 1,
-      title: 'Luxury Infinity Pool',
+      title: 'Park Gate Residence',
       description: 'Contemporary infinity pool with stunning water features',
-      image: 'assets/images/projects/luxury-infinity-pool.jpg',
-      category: 'pools',
-      slug: 'luxury-infinity-pool'
+      image: 'assets/Projects/Landscape/park gate/main.jpg',
+      category: 'landscaping',
+      slug: 'Park Gate Residence'
     },
     {
       id: 2,
-      title: 'Garden Paradise',
+      title: 'Lake Tower',
       description: 'Complete landscape transformation with pergola and lighting',
-      image: 'assets/images/projects/garden-paradise.jpg',
+      image: 'assets/Projects/Landscape/Lake tower/main.JPG',
       category: 'landscaping',
-      slug: 'garden-paradise'
+      slug: 'Lake Tower'
     },
     {
       id: 3,
-      title: 'Zen Water Feature',
+      title: 'Mr. Ali Villa',
       description: 'Tranquil water feature with surrounding zen garden',
-      image: 'assets/images/projects/zen-water-feature.jpg',
-      category: 'landscaping',
-      slug: 'zen-water-feature'
+      image: 'assets/Projects/swimming/ali villa/main.jpeg',
+      category: 'pools',
+      slug: 'Mr. Ali Villa'
     },
     {
       id: 4,
-      title: 'Modern Pool Oasis',
-      description: 'Sleek modern pool design with integrated spa',
-      image: 'assets/images/projects/modern-pool-oasis.jpg',
+      title: 'Burj Al Nujoom',
+      description: 'Elegant Health Club Oasis with Panoramic Downtown Dubai Views',
+      image: 'assets/Projects/swimming/Al nujoom tower/main.jpg',
       category: 'pools',
-      slug: 'modern-pool-oasis'
+      slug: 'Burj Al Nujoom'
     },
     {
       id: 5,
-      title: 'Resort Style Pool',
-      description: 'Tropical resort-style pool with waterfall features',
-      image: 'assets/images/projects/resort-style-pool.jpg',
-      category: 'pools',
-      slug: 'resort-style-pool'
+      title: 'Aura Tower',
+      description: 'Luxurious infinity-edge pool and landscape oasis at a premium Palm Jumeirah villa',
+      image: 'assets/Projects/Landscape/aura tower/main1.jpg',
+      category: 'landscaping',
+      slug: 'Aura Tower'
     },
     {
       id: 6,
-      title: 'Botanical Landscape',
-      description: 'Extensive botanical garden with native plant selections',
-      image: 'assets/images/projects/botanical-landscape.jpg',
+      title: 'Al Safa Community School',
+      description: 'Modern educational aquatic facility with dual swimming pools and comprehensive amenities',
+      image: 'assets/Projects/swimming/Al SAFA/main.jpg',
+      category: 'pools',
+      slug: 'Al Safa Community School'
+    },
+    {
+      id: 7,
+      title: 'Sparkle Tower',
+      description: 'Luxury landscape transformation with premium hardscaping and elegant garden features',
+      image: 'assets/Projects/Landscape/sparkle tower/main.jpg',
       category: 'landscaping',
-      slug: 'botanical-landscape'
+      slug: 'Sparkle Tower'
+    },
+    {
+      id: 8,
+      title: 'JADAF',
+      description: 'Modern educational aquatic facility with dual swimming pools and comprehensive amenities',
+      image: 'assets/Projects/Landscape/JADAF/main.jpg',
+      category: 'landscaping',
+      slug: 'JADAF'
+    },
+    {
+      id: 9,
+      title: 'Damac Navitos',
+      description: 'Modern educational aquatic facility with dual swimming pools and comprehensive amenities',
+      image: 'assets/Projects/swimming/Damac navitos/main.jpg',
+      category: 'pools',
+      slug: 'Damac Navitos'
     }
   ]);
 

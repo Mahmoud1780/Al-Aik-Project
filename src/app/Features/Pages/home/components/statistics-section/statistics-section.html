@@ -1,0 +1,17 @@
+<section class="stats-section" #statsSection>
+  <div class="container">
+    <div class="stats-grid">
+      @for(stat of stats; track stat.title) {
+        <div class="stat-item">
+          <div class="stat-number breathing-animation">
+            <span class="number-display">{{ formatNumber(animatedValues[$index]) }}</span>
+            @if(stat.suffix) {
+              <span class="suffix">{{ stat.suffix }}</span>
+            }
+          </div>
+          <div class="stat-title">{{ stat.title }}</div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

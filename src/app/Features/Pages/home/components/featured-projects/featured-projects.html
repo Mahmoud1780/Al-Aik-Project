@@ -1,8 +1,9 @@
 <!-- featured-projects.component.html -->
 <div class="featured-projects">
   <!-- Filter Tabs -->
-  <div class="filter-tabs mb-4">
+  <div class="filter-tabs">
     <div class="tab-buttons d-flex justify-content-center">
+      <div class="tab-box">
       @for (tab of filterTabs; track tab.key) {
         <button 
           type="button"
@@ -12,6 +13,7 @@
           {{ tab.label }}
         </button>
       }
+      </div>
     </div>
   </div>
 

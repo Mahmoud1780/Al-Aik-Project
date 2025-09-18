@@ -1,10 +1,18 @@
-body {
+.page-wrapper {
     background-color: #F8F7F2;
+    min-height: 100vh;
 }
 
 .homeSection {
     padding: 0 1.5rem;
     margin: 5rem auto 0;
+}
+.colored-section {
+    padding: 5rem 0;
+    background: linear-gradient(to right, #F7EED0, rgba(28, 77, 41, 0.5));;
+}
+.greenSection{
+    background-color: #326F56;
 }
 
 .homeHeader {

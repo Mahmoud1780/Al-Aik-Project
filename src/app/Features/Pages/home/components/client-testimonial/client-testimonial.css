@@ -1,0 +1,367 @@
+.testimonials-section {
+  padding: 10px 0 40px;
+  background-color: #f8f7f2;
+  position: relative;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  color: #1a5f7a;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.section-header p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.testimonials-container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+
+.testimonial-card {
+  background: white;
+  border-radius: 16px;
+  padding: 50px 40px 40px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  position: relative;
+  text-align: center;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Quote Icon - positioned inside the card at top-left */
+.quote-icon {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 50px;
+  height: 50px;
+  background: #2d5a3d;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  z-index: 2;
+  box-shadow: 0 4px 12px rgba(45, 90, 61, 0.2);
+}
+
+.quote-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Fixed Header Section (Author info stays at top) */
+.testimonial-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-shrink: 0;
+}
+
+.author-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 15px;
+  border: 4px solid #2d5a3d;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.author-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover .author-image img {
+  transform: scale(1.05);
+}
+
+.author-info {
+  margin-bottom: 10px;
+}
+
+.author-info h4 {
+  margin: 0 0 5px 0;
+  color: #2d5a3d;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.author-info p {
+  margin: 0;
+  color: #666;
+  font-size: 1rem;
+}
+
+.testimonial-rating {
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+}
+
+.star {
+  color: #FFD700;
+  font-size: 1.4rem;
+  text-shadow: 0 1px 3px rgba(255, 215, 0, 0.3);
+}
+
+/* Animated Content Container */
+.testimonial-content-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.testimonial-content {
+  width: 100%;
+}
+
+.testimonial-content p {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #444;
+  font-style: italic;
+  margin: 0;
+  padding: 0 20px;
+  position: relative;
+}
+
+/* Navigation Arrows */
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  border: 2px solid #e5e5e5;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 3;
+  color: #666;
+}
+
+.nav-arrow:hover {
+  background: #2d5a3d;
+  color: white;
+  border-color: #2d5a3d;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 12px 25px rgba(45, 90, 61, 0.3);
+}
+
+.nav-arrow svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2.5;
+}
+
+.prev-arrow {
+  left: -80px;
+}
+
+.next-arrow {
+  right: -80px;
+}
+
+/* Indicators */
+.testimonial-indicators {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  gap: 12px;
+}
+
+.testimonial-indicators button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: #d1d5db;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.testimonial-indicators button:hover {
+  background: #9ca3af;
+  transform: scale(1.2);
+}
+
+.testimonial-indicators button.active {
+  background: #2d5a3d;
+  transform: scale(1.3);
+  box-shadow: 0 0 0 3px rgba(45, 90, 61, 0.2);
+}
+
+.testimonial-indicators button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Hover Effects for the Card */
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .testimonials-container {
+    padding: 0 60px;
+  }
+  
+  .prev-arrow {
+    left: -60px;
+  }
+  
+  .next-arrow {
+    right: -60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonials-section {
+    padding: 40px 0;
+  }
+  
+  .section-header h2 {
+    font-size: 2rem;
+  }
+  
+  .testimonials-container {
+    padding: 0;
+    margin: 0 20px;
+  }
+  
+  .testimonial-card {
+    padding: 40px 25px 30px;
+    min-height: 350px;
+  }
+  
+  .testimonial-content p {
+    font-size: 1.1rem;
+    padding: 0 10px;
+  }
+  
+  .nav-arrow {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .nav-arrow svg {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .prev-arrow {
+    left: -25px;
+  }
+  
+  .next-arrow {
+    right: -25px;
+  }
+  
+  .quote-icon {
+    width: 40px;
+    height: 40px;
+    top: 15px;
+    left: 15px;
+  }
+  
+  .quote-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .author-image {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .author-info h4 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .testimonials-container {
+    margin: 0 10px;
+  }
+  
+  .testimonial-card {
+    padding: 35px 20px 25px;
+  }
+  
+  .testimonial-content p {
+    font-size: 1rem;
+    padding: 0 5px;
+  }
+  
+  .nav-arrow {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .prev-arrow {
+    left: -20px;
+  }
+  
+  .next-arrow {
+    right: -20px;
+  }
+  
+  .author-image {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .star {
+    font-size: 1.2rem;
+  }
+}
+
+/* Animation for smooth content changes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.testimonial-content:not(.transitioning) {
+  animation: fadeInUp 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}

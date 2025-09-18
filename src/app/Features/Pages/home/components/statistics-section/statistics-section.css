@@ -1,0 +1,129 @@
+.stats-section {
+  padding: 50px 0;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  text-align: center;
+}
+
+.stat-item {
+  padding: 20px;
+}
+
+.stat-number {
+  font-size: 3.5rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  line-height: 1;
+  font-family: "Playfair Display", serif;
+  /* Smooth text rendering for better visual stability */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  /* Prevent layout shifts during number changes */
+  min-height: 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Use transform for hardware acceleration */
+  will-change: transform;
+}
+
+/* Smoother, more subtle breathing animation */
+.breathing-animation {
+  animation: smoothBreathe 4s ease-in-out infinite;
+}
+
+@keyframes smoothBreathe {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-3px) scale(1.02);
+  }
+}
+
+/* Suffix styling */
+.stat-number span {
+  margin-left: 2px;
+  font-size: 0.8em;
+  opacity: 0.9;
+}
+
+.stat-title {
+  font-size: 1.2rem;
+  font-weight: 500;
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  /* Smooth transitions */
+  transition: opacity 0.3s ease;
+}
+
+/* Add hover effects for better interactivity */
+.stat-item:hover .stat-number {
+  animation-play-state: paused;
+  transform: translateY(-2px) scale(1.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stat-item:hover .stat-title {
+  opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+  
+  .stat-number {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .stats-section {
+    padding: 60px 0;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  
+  .stat-number {
+    font-size: 2.5rem;
+  }
+  
+  .stat-title {
+    font-size: 1.1rem;
+  }
+  
+  /* Reduce animation intensity on mobile */
+  @keyframes smoothBreathe {
+    0%, 100% {
+      transform: translateY(0) scale(1);
+    }
+    50% {
+      transform: translateY(-2px) scale(1.01);
+    }
+  }
+}

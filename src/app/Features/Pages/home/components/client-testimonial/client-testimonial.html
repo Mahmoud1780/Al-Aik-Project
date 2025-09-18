@@ -1,0 +1,62 @@
+<section class="testimonials-section">
+
+    <div class="testimonials-container" 
+         (mouseenter)="onMouseEnter()" 
+         (mouseleave)="onMouseLeave()">
+      
+      <div class="testimonial-card">
+        <!-- Quote Icon inside the card -->
+        <div class="quote-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M14,17h3l2-4V7h-6v6h3M6,17h3l2-4V7H5v6h3L6,17z"/>
+          </svg>
+        </div>
+
+        <!-- Author Info (Fixed position at top) -->
+        <div class="testimonial-header">
+          <div class="author-image">
+            <img [src]="getCurrentTestimonial().image" [alt]="getCurrentTestimonial().author">
+          </div>
+          <div class="author-info">
+            <h4>{{ getCurrentTestimonial().author }}</h4>
+            <p>{{ getCurrentTestimonial().role }}</p>
+          </div>
+          <div class="testimonial-rating">
+            @for (star of getStars(getCurrentTestimonial().rating); track star) {
+              <span class="star">★</span>
+            }
+          </div>
+        </div>
+
+        <!-- Animated Content Area -->
+        <div class="testimonial-content-container">
+          <div class="testimonial-content">
+            <p>"{{ getCurrentTestimonial().content }}"</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Arrows -->
+      <button class="nav-arrow prev-arrow" (click)="prevTestimonial()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <polyline points="15,18 9,12 15,6"></polyline>
+        </svg>
+      </button>
+
+      <button class="nav-arrow next-arrow" (click)="nextTestimonial()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <polyline points="9,18 15,12 9,6"></polyline>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Indicators at bottom -->
+    <div class="testimonial-indicators">
+      @for (testimonial of testimonials; track testimonial.id; let i = $index) {
+        <button 
+          [class.active]="i === currentIndex"
+          (click)="goToTestimonial(i)">
+        </button>
+      }
+    </div>
+</section>
