@@ -175,11 +175,11 @@ export class ProjectDetails implements OnInit {
       completed: 'March 2024',
       duration: '8 weeks',
       gallery: [
-        { id: 1, url: '../../../../assets/Projects/Landscape/aura tower/main.jpg', alt: 'Pool overview' },
-        { id: 2, url: '../../../../assets/Projects/Landscape/aura tower/1.jpg', alt: 'Fire feature' },
-        { id: 3, url: '../../../../assets/Projects/Landscape/aura tower/2.jpg', alt: 'Outdoor kitchen' },
-        { id: 4, url: '../../../../assets/Projects/Landscape/aura tower/3.jpg', alt: 'Evening ambiance' },
-        { id: 5, url: '../../../../assets/Projects/Landscape/aura tower/main1.jpg', alt: 'Evening ambiance' }
+        { id: 1, url: 'assets/Projects/Landscape/aura tower/main.jpg', alt: 'Pool overview' },
+        { id: 2, url: 'assets/Projects/Landscape/aura tower/1.jpg', alt: 'Fire feature' },
+        { id: 3, url: 'assets/Projects/Landscape/aura tower/2.jpg', alt: 'Outdoor kitchen' },
+        { id: 4, url: 'assets/Projects/Landscape/aura tower/3.jpg', alt: 'Evening ambiance' },
+        { id: 5, url: 'assets/Projects/Landscape/aura tower/main1.jpg', alt: 'Evening ambiance' }
 
       ]
     },
@@ -341,7 +341,6 @@ export class ProjectDetails implements OnInit {
   }
 
   getHeroStyles(imageUrl: string): { [key: string]: string } {
-    console.log('Setting background image:', imageUrl);
     return {
       'background': `url('${imageUrl}') no-repeat center center/cover`
     };
