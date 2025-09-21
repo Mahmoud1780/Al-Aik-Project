@@ -4,8 +4,12 @@
 }
 
 .homeSection {
-    padding: 0 1.5rem;
+    /* padding: 0 1.5rem; */
     margin: 5rem auto 0;
+}
+.container {
+    max-width: 1400px;
+    width: 100%;
 }
 .colored-section {
     padding: 5rem 0;

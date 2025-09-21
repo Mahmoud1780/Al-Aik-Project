@@ -37,7 +37,7 @@ export class ClientTestimonial implements OnInit, OnDestroy {
 
   currentIndex = 0;
   private intervalId: any;
-  private readonly AUTO_SLIDE_INTERVAL = 5000; // 5 seconds
+  private readonly AUTO_SLIDE_INTERVAL = 2000; // 2 seconds
   isTransitioning = false;
 
   ngOnInit(): void {

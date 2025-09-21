@@ -7,10 +7,11 @@ import { FeaturedProjects } from '../components/featured-projects/featured-proje
 import { WhySection } from '../components/why-section/why-section';
 import { StatisticsSection } from '../components/statistics-section/statistics-section';
 import { ClientTestimonial } from '../components/client-testimonial/client-testimonial';
+import { ContactUsSection } from '../components/contact-us-section/contact-us-section';
 
 @Component({
   selector: 'app-home-page',
-  imports: [HeroSection,SwimmingPoolSection,LandscapeSection,SpecialtyServiceSection,FeaturedProjects,WhySection,StatisticsSection,ClientTestimonial],
+  imports: [HeroSection,SwimmingPoolSection,LandscapeSection,SpecialtyServiceSection,FeaturedProjects,WhySection,StatisticsSection,ClientTestimonial,ContactUsSection],
   templateUrl: './home-page.html',
   styleUrl: './home-page.css'
 })
