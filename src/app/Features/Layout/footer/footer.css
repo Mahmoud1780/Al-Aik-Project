@@ -78,6 +78,7 @@
 
 .footer-section ul li {
   margin-bottom: 12px;
+  transition: all 0.3s ease;
 }
 
 .footer-section ul li a {
@@ -97,6 +98,10 @@
 
 .footer-section ul li a:hover {
   color: #FF6B35;
+  
+}
+.footer-section ul li:hover {
+    transform: translateX(5px);
 }
 
 .contact-info {
