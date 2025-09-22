@@ -11,7 +11,7 @@ import { SectionData } from '../../../Shared/Interfaces/section-data';
 export class ServicePage implements OnInit {
   private route = inject(ActivatedRoute);
   private router = inject(Router);
-  
+
   service = signal<SectionData | null>(null);
   loading = signal<boolean>(true);
   notFound = signal<boolean>(false);
@@ -24,7 +24,7 @@ export class ServicePage implements OnInit {
       title: 'Custom Swimming Pools',
       subtitle: 'Premium Landscaping & Pool Services',
       heroImage: 'assets/images/swimming-pool-hero.jpg',
-      overview: 'Transform your backyard into a luxurious aquatic paradise with our custom-designed swimming pools. Our expert team combines innovative design with premium materials to create pools that perfectly complement your outdoor space and lifestyle. From infinity edges to natural rock formations, every pool is a masterpiece tailored to your vision.',
+      overview: 'Transform your backyard into a luxurious aquatic paradise with our exquisitely crafted, custom-designed swimming pools. Our team of expert designers and master craftsmen work collaboratively with you to create a stunning aquatic centerpiece that perfectly complements your home\'s architecture and enhances your outdoor living experience. We combine innovative, cutting-edge design concepts with only the highest quality premium materials to ensure your pool not only looks spectacular but stands the test of time. Whether you envision a sleek, modern infinity edge pool that appears to merge with the horizon, a resort-style oasis complete with integrated spas and tanning ledges, or a naturalistic lagoon featuring stunning rock formations and waterfalls, we bring your unique vision to life with meticulous attention to detail. Every curve, every material, and every feature is carefully considered and tailored to your specific lifestyle, creating a true masterpiece that provides a private retreat for relaxation, a vibrant hub for entertainment, and a significant enhancement to your property\'s value. From the initial consultation to the final finishing touches, we are dedicated to delivering an unparalleled level of quality and service, ensuring your custom pool becomes the ultimate expression of luxury and leisure.',
       keyFeatures: [
         'Custom design consultation and 3D visualization',
         'Infinity edge and vanishing edge pool options',
@@ -57,25 +57,26 @@ export class ServicePage implements OnInit {
       title: 'Water Features & Fountains',
       subtitle: 'Premium Water Feature Design & Installation',
       heroImage: 'assets/images/water-features-hero.jpg',
-      overview: 'Create tranquil atmospheres with our elegant water elements. From stunning fountains to cascading waterfalls, our water features add a sense of serenity and luxury to any outdoor space. Each installation is carefully designed to complement your landscape while providing the soothing sounds of flowing water.',
+      overview: 'Create a serene and elegant atmosphere with our custom water features and fountains, designed to infuse your outdoor space with a sense of tranquility and luxury. We specialize in crafting a diverse range of stunning water elements, from sleek, contemporary wall fountains that provide a minimalist backdrop to dramatic, traditional tiered designs that serve as classic centerpieces. Our expert team carefully designs and engineers each installation—whether it\'s a cascading waterfall, a gentle bubbling rock, or a reflective pond—to perfectly harmonize with your existing landscape architecture. Beyond their visual impact as stunning focal points, our water features are masterfully crafted to deliver the calming, soothing sounds of flowing water, effectively masking unwanted urban noise and transforming your garden or patio into a private sanctuary for relaxation and contemplation. Each project is tailored to your vision, ensuring the final result not only enhances the beauty of your property but also creates a personalized oasis of peace.',
       keyFeatures: [
         'Custom fountain design and installation',
         'Natural stone waterfall construction',
-        'Pond and water garden creation',
-        'LED lighting integration',
+        'Recirculating water systems for efficiency',
+        'LED lighting integration for night time appeal',
         'Energy-efficient pump systems',
         'Low-maintenance filtration systems',
-        'Seasonal winterization services',
+        'Winter weatherization and maintenance programs',
         'Smart water level monitoring'
       ],
       serviceBenefits: [
         'Creates peaceful, meditative environments',
-        'Increases property aesthetic value',
+        'Masks unwanted noise with natural sounds',
         'Attracts beneficial wildlife',
-        'Reduces ambient noise pollution',
-        'Low maintenance requirements',
+        'Adds dramatic visual appeal day and night',
+        'Low maintenance with automated systems',
         'Energy-efficient operation',
-        'Customizable to any space size',
+        'Customizable to any space or style',
+        'Increases property aesthetic value',
         'Professional installation guarantee'
       ],
       gallery: [
@@ -90,26 +91,27 @@ export class ServicePage implements OnInit {
       title: 'Jacuzzi & Spa',
       subtitle: 'Luxurious Spa Installations',
       heroImage: 'assets/images/spa-hero.jpg',
-      overview: 'Experience ultimate relaxation with our luxurious spa installations. Our custom jacuzzis and spa systems are designed for comfort, durability, and therapeutic benefits. Whether integrated with your pool or as a standalone feature, our spas provide year-round enjoyment and wellness benefits.',
+      overview: 'Experience ultimate relaxation and indulge in year-round wellness with our luxurious, custom-designed jacuzzi and spa installations. Our therapeutic spa systems are expertly engineered to combine advanced hydrotherapy technology with stunning, aesthetically pleasing design, creating your personal wellness retreat right in your own backyard. We prioritize superior comfort, long-term durability, and maximum therapeutic benefits in every installation, ensuring a sanctuary built for both immediate pleasure and lasting value. Whether seamlessly integrated with your existing swimming pool to create a cohesive aquatic environment or expertly crafted as a distinctive standalone feature, each spa is meticulously planned and tailored to your specific space and lifestyle. From powerful, targeted jets that soothe muscles to energy-efficient heating systems and intuitive controls, every detail is carefully considered to maximize both the health benefits and the visual appeal. Our commitment to quality craftsmanship guarantees a spa experience that provides a daily escape for relaxation, social enjoyment, and enhanced well-being, transforming your outdoor area into a haven of serenity and luxury.',
       keyFeatures: [
-        'Custom spa design and sizing',
-        'Therapeutic jet configurations',
-        'Advanced heating systems',
-        'Premium acrylic and stone finishes',
-        'Smart control systems',
+        'Therapeutic jet systems with customizable massage options',
+        'Premium acrylic and natural stone construction',
+        'Energy-efficient heating and insulation systems',
+        'Chromotherapy and aromatherapy integration',
+        'Smart control systems for temperature and jets',
         'LED chromotherapy lighting',
-        'Ozone and UV sanitization',
-        'Energy-efficient insulation'
+        'Privacy landscaping and screening design',
+        'Safety features including covers and steps',
+        'Integration with existing pool systems',
       ],
       serviceBenefits: [
-        'Therapeutic health and wellness benefits',
-        'Year-round relaxation opportunity',
-        'Increases home entertainment value',
-        'Energy-efficient heating systems',
-        'Low-maintenance operation',
-        'Customizable comfort settings',
-        'Premium materials ensure durability',
-        'Professional service and support'
+        'Provides therapeutic relief for muscles and joints',
+        'Creates private relaxation and meditation space',
+        'Year-round enjoyment regardless of weather',
+        'Increases property value and appeal',
+        'Energy-efficient operation with smart controls',
+        'Low maintenance with automated systems',
+        'Customizable features for personal preferences',
+        'Professional installation ensures optimal performance'
       ],
       gallery: [
         { url: 'assets/images/spa-gallery-1.jpg', alt: 'Integrated pool and spa' },
@@ -123,7 +125,7 @@ export class ServicePage implements OnInit {
       title: 'Pool Animation Lighting',
       subtitle: 'Dramatic Pool Lighting Systems',
       heroImage: 'assets/images/pool-lighting-hero.jpg',
-      overview: 'Transform your pool into a stunning nighttime attraction with our dramatic lighting systems. Our pool animation lighting creates breathtaking visual displays while ensuring safety and functionality. From subtle ambient lighting to dynamic color-changing systems, we create the perfect nighttime ambiance.',
+      overview: 'Transform your pool into a mesmerizing nighttime spectacle with our advanced animation lighting systems. We move beyond simple illumination to create stunning visual experiences using state-of-the-art LED technology, which allows for a breathtaking array of colors, synchronized light shows, and dynamic patterns that make your pool the centerpiece of evening entertainment. This dramatic transformation is seamlessly balanced with essential safety and functionality, ensuring clear visibility for security while offering effortless control via smart devices. By tailoring the system to your pool\'s unique design and your personal style, we create the perfect nighttime ambiance, from subtle, relaxing glows to vibrant, party-ready displays, thereby extending the enjoyment and value of your outdoor living space well after the sun goes down.',
       keyFeatures: [
         'LED color-changing systems',
         'Programmable light sequences',
@@ -157,26 +159,26 @@ export class ServicePage implements OnInit {
       title: 'Soft & Hard Landscape',
       subtitle: 'Complete Landscaping Solutions',
       heroImage: 'assets/images/landscape-hero.jpg',
-      overview: 'Transform your outdoor space with our comprehensive landscaping solutions. We combine soft landscaping (plants, lawns, trees) with hard landscaping (stonework, pathways, structures) to create cohesive, beautiful environments. Our designs balance functionality with aesthetic appeal.',
+      overview: 'Transform your outdoor space into a cohesive and stunning environment with our comprehensive soft and hard landscaping solutions. We specialize in creating the perfect balance between natural beauty and functional design by expertly combining the organic elements of soft landscaping—such as lush lawns, vibrant plants, and strategically placed trees—with the structural integrity of hard landscaping, including elegant stonework, inviting pathways, durable patios, and essential retaining walls. Our holistic approach ensures that every project is meticulously planned to harmonize the living, growing components with the built, permanent structures, resulting in a landscape that is not only visually captivating but also incredibly practical and sustainable. Whether you\'re looking to create a serene garden retreat, an expansive entertainment area, or a functional family space, our designs are tailored to your lifestyle, enhancing your property\'s aesthetic appeal while maximizing its usability and enjoyment for years to come.',
       keyFeatures: [
-        'Custom landscape design planning',
-        'Native and exotic plant selection',
-        'Natural stone and hardscape installation',
-        'Lawn installation and restoration',
-        'Tree and shrub planting',
-        'Mulching and soil preparation',
-        'Drainage and grading solutions',
-        'Seasonal maintenance programs'
+        'Custom plant selection and garden design',
+        'Natural stone pathways and patios',
+        'Retaining walls and terracing solutions',
+        'Drought-resistant and native plant installations',
+        'Seasonal color planning and maintenance',
+        'Soil preparation and drainage solutions',
+        'Mulching and ground cover installations',
+        'Integrated design connecting all landscape elements'
       ],
       serviceBenefits: [
-        'Increases property value significantly',
-        'Creates beautiful outdoor living spaces',
-        'Environmentally sustainable solutions',
-        'Low-maintenance plant selections',
-        'Professional design expertise',
-        'Seasonal interest year-round',
-        'Custom solutions for any space',
-        'Ongoing maintenance support'
+        'Creates year-round visual interest and beauty',
+        'Reduces maintenance with proper plant selection',
+        'Improves property drainage and soil health',
+        'Increases outdoor living and entertainment space',
+        'Provides privacy and noise reduction',
+        'Attracts beneficial wildlife and pollinators',
+        'Reduces water usage with native plantings',
+        'Professional design ensures long-term success'
       ],
       gallery: [
         { url: 'assets/images/landscape-gallery-1.jpg', alt: 'Mixed soft and hard landscape' },
@@ -190,26 +192,26 @@ export class ServicePage implements OnInit {
       title: 'Pergola & Gazebo',
       subtitle: 'Custom Outdoor Structures',
       heroImage: 'assets/images/pergola-hero.jpg',
-      overview: 'Create perfect outdoor entertainment spaces with our custom pergolas and gazebos. These structures provide shade, define spaces, and add architectural interest to your landscape. Built with premium materials and expert craftsmanship for lasting beauty and functionality.',
+      overview: 'Create perfect outdoor entertainment and living spaces with our custom-built pergolas and gazebos, designed to enhance your property\'s aesthetic while providing functional benefits. These elegant architectural features expertly define outdoor rooms, create intimate gathering areas, and provide comfortable shade and shelter from the elements, all while adding vertical interest and sophisticated style to your landscape. Each structure is meticulously designed to seamlessly complement your home\'s existing architecture and overall landscape design, ensuring a cohesive and integrated look. Built with premium, durable materials and exceptional craftsmanship, our pergolas and gazebos are constructed to withstand the elements while maintaining their beauty and structural integrity for years to come. From classic wooden designs that offer natural warmth to modern aluminum structures with clean lines, we create custom solutions that not only provide practical benefits like sun protection and defined spaces but also significantly increase your property\'s value and outdoor living potential, transforming your yard into a true extension of your home.',
       keyFeatures: [
-        'Custom design and sizing',
-        'Premium wood and metal materials',
-        'Weather-resistant finishes',
-        'Integrated lighting options',
-        'Climbing plant support systems',
-        'Built-in seating options',
-        'Roof and shade options',
-        'Professional installation'
+        'Custom design matching your home\'s architecture',
+        'Premium cedar, redwood, and composite materials',
+        'Integrated lighting and electrical systems',
+        'Climbing plant support systems and trellises',
+        'Weather-resistant construction and finishes',
+        'Built-in seating and storage solutions',
+        'Retractable canopy and shade options',
+        'Professional installation with structural engineering'
       ],
       serviceBenefits: [
-        'Creates defined outdoor living spaces',
-        'Provides shade and weather protection',
-        'Adds architectural interest',
-        'Increases property entertainment value',
-        'Customizable to any style',
-        'Durable construction materials',
-        'Professional design and installation',
-        'Low maintenance requirements'
+        'Creates defined outdoor living and dining areas',
+        'Provides natural shade and weather protection',
+        'Increases property value with architectural appeal',
+        'Supports climbing plants for natural beauty',
+        'Extends outdoor season with comfortable spaces',
+        'Low maintenance with quality materials',
+        'Customizable to any size or style preference',
+        'Professional construction ensures safety and durability'
       ],
       gallery: [
         { url: 'assets/images/pergola-gallery-1.jpg', alt: 'Wooden pergola with seating' },
@@ -223,26 +225,26 @@ export class ServicePage implements OnInit {
       title: 'Irrigation & Sprinklers',
       subtitle: 'Smart Watering Systems',
       heroImage: 'assets/images/irrigation-hero.jpg',
-      overview: 'Maintain healthy, vibrant landscapes with our smart irrigation systems. Our efficient sprinkler and drip irrigation solutions ensure your plants receive the perfect amount of water while conserving resources. Smart technology integration provides convenient control and monitoring.',
+      overview: 'Maintain a healthy, vibrant landscape that thrives year-round with our advanced smart irrigation and sprinkler systems. Our water-efficient solutions, including precision drip irrigation and automated sprinkler networks, are expertly designed to deliver the exact amount of water your plants need, precisely when they need it. This intelligent approach promotes deep root growth and lush foliage while significantly conserving vital water resources and reducing your utility costs. With seamless smart technology integration, you gain convenient control and real-time monitoring right from your smartphone or tablet, allowing you to adjust schedules based on weather conditions and specific zone requirements. Our systems ensure every part of your landscape—from delicate flower beds to expansive lawns—receives optimal hydration without waste, protecting your investment and sustaining the beauty of your outdoor environment through every season with effortless, automated efficiency.',
       keyFeatures: [
-        'Smart controller systems',
-        'Drip irrigation for gardens',
-        'Sprinkler system design',
-        'Weather sensor integration',
-        'Zone-specific watering',
-        'Water-efficient nozzles',
-        'Underground installation',
-        'Mobile app control'
+        'Smart irrigation controllers with weather sensors',
+        'Drip irrigation for efficient water delivery',
+        'Pop-up sprinkler systems for lawns and gardens',
+        'Rain sensors and moisture monitoring',
+        'Zone-specific watering schedules and controls',
+        'Water-efficient nozzles and emitters',
+        'Seasonal adjustment programming',
+        'Professional system design and installation'
       ],
       serviceBenefits: [
-        'Conserves water and reduces bills',
-        'Maintains healthy plant growth',
-        'Automated convenient operation',
-        'Weather-responsive adjustments',
-        'Prevents overwatering damage',
-        'Increases plant survival rates',
-        'Smart technology integration',
-        'Professional maintenance support'
+        'Reduces water usage by up to 50% with smart controls',
+        'Maintains healthy landscapes with consistent watering',
+        'Saves time with automated scheduling',
+        'Lowers water bills with efficient delivery systems',
+        'Prevents overwatering and plant diseases',
+        'Increases property value with professional systems',
+        'Easy maintenance with quality components',
+        'Environmental benefits with water conservation'
       ],
       gallery: [
         { url: 'assets/images/irrigation-gallery-1.jpg', alt: 'Sprinkler system in action' },
@@ -256,25 +258,26 @@ export class ServicePage implements OnInit {
       title: 'Landscape Lighting',
       subtitle: 'Professional Outdoor Lighting',
       heroImage: 'assets/images/landscape-lighting-hero.jpg',
-      overview: 'Showcase your property with professional landscape lighting design. Our lighting solutions enhance security, extend outdoor living hours, and highlight your landscape\'s best features. From subtle accent lighting to dramatic uplighting, we create the perfect ambiance.',
+      overview: 'Showcase your property\'s beauty and extend your outdoor living into the evening hours with our professional landscape lighting design services. Our comprehensive lighting solutions are designed to enhance safety and security, ensure easy navigation throughout your property, and artistically highlight your landscape\'s and home\'s finest architectural features. Utilizing energy-efficient LED technology, we create customized lighting plans that range from subtle accent lighting which gently washes walls and pathways to dramatic uplighting that sculpts trees and creates captivating shadows. This thoughtful approach transforms your outdoor space into a stunning nighttime masterpiece, setting the perfect ambiance for entertaining or relaxation while significantly increasing your property\'s curb appeal and functionality long after the sun goes down. Each design is tailored to your specific space, ensuring that light is used strategically to create depth, focus, and a welcoming atmosphere that allows you to enjoy your landscape to its fullest potential, day and night.',
       keyFeatures: [
-        'LED energy-efficient fixtures',
-        'Path and safety lighting',
-        'Accent and uplighting',
-        'Timer and smart controls',
-        'Weather-resistant fixtures',
-        'Low-voltage safe systems',
-        'Architectural highlighting',
-        'Seasonal adjustment capabilities'
+        'Energy-efficient LED lighting technology',
+        'Pathway and safety lighting installations',
+        'Architectural and accent lighting design',
+        'Tree uplighting and garden spotlights',
+        'Smart controls and automation systems',
+        'Low-voltage systems for safety and efficiency',
+        'Weather-resistant fixtures and components',
+        'Professional design and installation services'
       ],
       serviceBenefits: [
-        'Enhances security and safety',
-        'Extends outdoor living hours',
-        'Highlights landscape features',
-        'Energy-efficient LED technology',
-        'Increases property curb appeal',
-        'Smart control and automation',
-        'Professional installation quality',
+        'Enhances safety and security for nighttime use',
+        'Creates stunning visual appeal after dark',
+        'Increases property value with professional lighting',
+        'Energy-efficient operation reduces costs',
+        'Smart controls allow easy customization',
+        'Extends outdoor living hours year-round',
+        'Highlights landscape investments and features',
+        'Low maintenance with LED technology',
         'Long-term durability and warranty'
       ],
       gallery: [
@@ -290,26 +293,28 @@ export class ServicePage implements OnInit {
       title: 'Environmental Services',
       subtitle: 'Sustainable Design Solutions',
       heroImage: 'assets/images/environmental-hero.jpg',
-      overview: 'Create environmentally conscious outdoor spaces with our sustainable design solutions. We focus on eco-friendly materials, native plant selections, and water conservation techniques to minimize environmental impact while creating beautiful, functional landscapes.',
+      overview: 'Create sustainable, eco-friendly landscapes that benefit both your property and the local environment through our comprehensive environmental services. We specialize in environmentally conscious design solutions that focus on integrating native plant installations, implementing advanced water conservation techniques, and utilizing recycled and locally sourced eco-friendly materials. Our approach includes vital soil restoration to improve ecosystem health and the creation of wildlife-friendly habitats that support local biodiversity. By employing sustainable design practices such as rainwater harvesting, permeable paving, and strategic planting to reduce water consumption and minimize maintenance needs, we significantly reduce environmental impact while creating beautiful, functional outdoor spaces. Each project is carefully planned to work in harmony with the natural ecosystem, resulting in a landscape that not only enhances your property\'s beauty and usability but also contributes positively to the environment, promotes conservation, and fosters a healthier, more resilient outdoor living space for generations to come.',
       keyFeatures: [
-        'Native plant landscape design',
-        'Water conservation systems',
-        'Sustainable material selection',
-        'Soil health improvement',
-        'Wildlife habitat creation',
-        'Organic maintenance practices',
-        'Carbon footprint reduction',
+        'Native plant selection and installation',
+        'Sustainable design practices and materials',
+        'Soil restoration and improvement programs',
+        'Wildlife habitat creation and enhancement',
+        'Pollinator-friendly garden design',
+        'Rain garden and bioswale installation',
+        'Organic pest and disease management',
+        'Carbon footprint reduction strategies',
         'Environmental impact assessment'
       ],
       serviceBenefits: [
-        'Reduces environmental impact',
-        'Lowers water and maintenance costs',
-        'Supports local ecosystem',
-        'Increases property sustainability rating',
+        'Reduces environmental impact and water usage',
+        'Supports local wildlife and pollinators',
+        'Lower maintenance with adapted native plants',
+        'Improves soil health and water management',
         'Creates healthier outdoor environments',
-        'Reduces chemical usage',
-        'Long-term cost savings',
-        'Professional eco-friendly expertise'
+        'Reduces need for chemical treatments',
+        'Creates educational opportunities about nature',
+        'Increases property value with sustainable features',
+        'Contributes to community environmental goals',
       ],
       gallery: [
         { url: 'assets/images/environmental-gallery-1.jpg', alt: 'Native plant landscape' },
@@ -323,26 +328,26 @@ export class ServicePage implements OnInit {
       title: 'Digital IoT Solutions',
       subtitle: 'Smart Technology Integration',
       heroImage: 'assets/images/iot-hero.jpg',
-      overview: 'Integrate smart technology into your outdoor living spaces with our Digital IoT solutions. From automated irrigation to smart lighting and pool controls, we bring your landscape into the digital age with convenient, efficient, and intelligent systems.',
+      overview: 'Embrace the future of outdoor living and landscape management with our cutting-edge Digital IoT (Internet of Things) solutions. We seamlessly integrate smart technology into your property, bringing your entire outdoor environment into the digital age with a unified, intelligent system. Our advanced platforms combine a network of wireless sensors, intelligent automation, and remote monitoring capabilities to optimize the performance and efficiency of your irrigation, lighting, pool equipment, and security systems. Imagine effortlessly adjusting your pool\'s temperature, activating a custom lighting scene for entertaining, or precisely watering specific garden zones—all from a single, convenient smartphone application. This holistic approach not only provides unparalleled convenience and control but also delivers significant efficiency gains by ensuring resources like water and energy are used optimally, reducing waste and lowering operational costs. By transforming your landscape into a responsive, connected ecosystem, we create an outdoor living space that is not only beautiful and functional but also intelligently managed, adaptable, and truly future-proof, offering you more time to relax and enjoy your personalized paradise.',
       keyFeatures: [
-        'Smart irrigation controllers',
-        'Automated lighting systems',
-        'Pool and spa automation',
-        'Weather monitoring integration',
-        'Mobile app connectivity',
-        'Voice control compatibility',
-        'Energy monitoring systems',
-        'Security integration'
+        'Smart irrigation controllers with weather integration',
+        'Automated lighting systems with scheduling',
+        'Pool and spa automation and monitoring',
+        'Security cameras and motion sensors',
+        'Smartphone app control and monitoring',
+        'Weather sensors and environmental monitoring',
+        'Energy usage tracking and optimization',
+        'Remote diagnostics and maintenance alerts'
       ],
       serviceBenefits: [
-        'Convenient remote control access',
-        'Reduces energy and water usage',
-        'Automated system optimization',
-        'Real-time monitoring capabilities',
-        'Enhanced security features',
-        'Future-ready technology',
-        'Professional installation and support',
-        'Seamless smart home integration'
+        'Complete control from anywhere via smartphone',
+        'Optimizes resource usage and reduces costs',
+        'Prevents problems with early monitoring alerts',
+        'Increases security with smart surveillance',
+        'Reduces maintenance needs with automation',
+        'Maximizes system efficiency and performance',
+        'Future-proof technology with regular updates',
+        'Professional installation and ongoing support'
       ],
       gallery: [
         { url: 'assets/images/iot-gallery-1.jpg', alt: 'Smart control panel' },
@@ -356,26 +361,26 @@ export class ServicePage implements OnInit {
       title: '3D Design & Visualization',
       subtitle: 'Detailed Design Renderings',
       heroImage: 'assets/images/3d-design-hero.jpg',
-      overview: 'Visualize your dream space before construction begins with our detailed 3D renderings. Our advanced design technology allows you to see exactly how your project will look, making it easier to make decisions and ensuring the final result matches your vision perfectly.',
+      overview: 'See your dream landscape come to life before construction even begins with our advanced 3D design and visualization services. Utilizing cutting-edge software, drone mapping technology, and architectural expertise, we create incredibly detailed, photorealistic renderings and immersive virtual walkthroughs that allow you to fully experience and refine your project in a dynamic digital environment. This powerful process transforms abstract ideas into a clear, tangible vision, enabling you to explore different angles, materials, and design options with precision. By seeing exactly how your project will look and feel within your actual property lines, you can make confident, informed decisions about layout, plant selections, and hardscape features, ensuring the final constructed result perfectly matches your vision and eliminating costly changes mid-construction. This innovative service not only brings unparalleled clarity and excitement to the planning phase but also guarantees that every detail is meticulously planned and agreed upon, leading to a smoother construction process and a final outdoor space that exceeds your expectations.',
       keyFeatures: [
-        'Photorealistic 3D renderings',
-        'Interactive virtual tours',
-        'Multiple design options',
-        'Material and color visualization',
-        'Lighting simulation',
-        'Seasonal change previews',
-        'Construction planning integration',
-        'Client collaboration platform'
+        'Photorealistic 3D renderings and walkthroughs',
+        'Virtual reality experiences of your design',
+        'Drone surveys for accurate site modeling',
+        'Plant growth simulation over time',
+        'Material and color selection visualization',
+        'Lighting effects and seasonal changes preview',
+        'Interactive design reviews and modifications',
+        'Professional presentation materials for approvals'
       ],
       serviceBenefits: [
-        'Visualize project before construction',
-        'Make informed design decisions',
-        'Avoid costly construction changes',
-        'Enhance client-designer communication',
-        'Accurate project planning',
-        'Professional presentation quality',
-        'Multiple design option comparisons',
-        'Detailed construction guidance'
+        'Visualize your project before construction begins',
+        'Make informed decisions with realistic previews',
+        'Avoid costly changes during construction',
+        'Ensure project meets expectations before building',
+        'Professional presentations for HOA approvals',
+        'Experience different design options virtually',
+        'Accurate cost estimation with detailed models',
+        'Streamlined communication with clear visuals'
       ],
       gallery: [
         { url: 'assets/images/3d-gallery-1.jpg', alt: '3D pool design rendering' },
@@ -398,10 +403,10 @@ export class ServicePage implements OnInit {
   private loadService(serviceId: string): void {
     this.loading.set(true);
     this.notFound.set(false);
-    
+
     setTimeout(() => {
       const foundService = this.services.find(s => s.id === serviceId);
-      
+
       if (foundService) {
         this.service.set(foundService);
         this.notFound.set(false);
@@ -409,7 +414,7 @@ export class ServicePage implements OnInit {
         this.service.set(null);
         this.notFound.set(true);
       }
-      
+
       this.loading.set(false);
     }, 300);
   }
