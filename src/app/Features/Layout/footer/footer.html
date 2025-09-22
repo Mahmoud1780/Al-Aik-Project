@@ -47,7 +47,7 @@
                 <ul>
                     @for(service of landscapingServices; track $index){
                     <li>
-                        <a href="#">{{service}}</a>
+                        <a [routerLink]="['/services', service.slug]">{{service.name}}</a>
                     </li>
                     }
                 </ul>
@@ -55,11 +55,11 @@
 
             <!-- Swimming Pool Services -->
             <div class="footer-section">
-                <h4>    </h4>
+                <h4>Swimming Pool Services</h4>
                 <ul>
                     @for(service of poolServices; track $index){
                     <li>
-                        <a href="#">{{service}}</a>
+                        <a [routerLink]="['/services', service.slug]">{{service.name}}</a>
                     </li>
                     }
                 </ul>

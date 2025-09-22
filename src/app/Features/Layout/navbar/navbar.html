@@ -32,10 +32,10 @@
             <i class="dropdown-arrow" [class.rotated]="isDropdownOpen('landscaping')">▼</i>
           </a>
           <ul class="dropdown-menu" [class.show]="isDropdownOpen('landscaping')">
-            <li><a class="dropdown-item" (click)="closeNavbar()">Soft & Hard Landscape</a></li>
-            <li><a class="dropdown-item" (click)="closeNavbar()">Pergola & Gazebo</a></li>
-            <li><a class="dropdown-item" (click)="closeNavbar()">Irrigation & Sprinklers</a></li>
-            <li><a class="dropdown-item" (click)="closeNavbar()">Landscape Lighting</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/services', 'soft-hard-landscape']" (click)="closeNavbar()">Soft & Hard Landscape</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/services', 'pergola-gazebo']" (click)="closeNavbar()">Pergola & Gazebo</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/services', 'irrigation-sprinklers']" (click)="closeNavbar()">Irrigation & Sprinklers</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/services', 'landscape-lighting']" (click)="closeNavbar()">Landscape Lighting</a></li>
           </ul>
         </li>
         
@@ -48,10 +48,10 @@
             <i class="dropdown-arrow" [class.rotated]="isDropdownOpen('swimming')">▼</i>
           </a>
           <ul class="dropdown-menu" [class.show]="isDropdownOpen('swimming')">
-            <li><a class="dropdown-item" (click)="closeNavbar()">Swimming Pools</a></li>
-            <li><a class="dropdown-item" (click)="closeNavbar()">Water Features & Fountains</a></li>
-            <li><a class="dropdown-item" (click)="closeNavbar()">Jacuzzi & Spa</a></li>
-            <li><a class="dropdown-item" (click)="closeNavbar()">Pools & Animation Lighting</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/services', 'custom-swimming-pools']" (click)="closeNavbar()">Swimming Pools</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/services', 'water-features-fountains']" (click)="closeNavbar()">Water Features & Fountains</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/services', 'jacuzzi-spa']" (click)="closeNavbar()">Jacuzzi & Spa</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/services', 'pool-animation-lighting']" (click)="closeNavbar()">Pools & Animation Lighting</a></li>
           </ul>
         </li>
         
@@ -64,9 +64,9 @@
             <i class="dropdown-arrow" [class.rotated]="isDropdownOpen('services')">▼</i>
           </a>
           <ul class="dropdown-menu" [class.show]="isDropdownOpen('services')">
-            <li><a class="dropdown-item" (click)="closeNavbar()">Environmental Services</a></li>
-            <li><a class="dropdown-item" (click)="closeNavbar()">Digital IoT Solutions</a></li>
-            <li><a class="dropdown-item" (click)="closeNavbar()">3D Design & Visualization</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/services', 'environmental-services']" (click)="closeNavbar()">Environmental Services</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/services', 'digital-iot-solutions']" (click)="closeNavbar()">Digital IoT Solutions</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/services', '3d-design-visualization']" (click)="closeNavbar()">3D Design & Visualization</a></li>
           </ul>
         </li>
         
