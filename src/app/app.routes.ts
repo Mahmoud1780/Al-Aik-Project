@@ -16,6 +16,28 @@ export const routes: Routes = [
             {path: 'contact', component: ContactPage, title: 'Contact-us'},
             {path: 'projects/:slug', component: ProjectDetails, title: 'Project Details'},
             {path: 'services/:serviceId', component: ServicePage, title: 'Service Details'},
+
+            // Specific service routes for better SEO 
+            { 
+                path: 'swimming-pools', 
+                redirectTo: 'services/custom-swimming-pools', 
+                pathMatch: 'full' 
+            },
+            { 
+                path: 'water-features', 
+                redirectTo: 'services/water-features-fountains', 
+                pathMatch: 'full' 
+            },
+            { 
+                path: 'landscaping', 
+                redirectTo: 'services/soft-hard-landscape', 
+                pathMatch: 'full' 
+            },
+            { 
+                path: 'specialty-services', 
+                redirectTo: 'services/environmental-services', 
+                pathMatch: 'full' 
+            }
         ] 
     },
     

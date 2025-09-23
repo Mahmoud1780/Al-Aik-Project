@@ -1,1 +1,162 @@
-<p>about-page works!</p>
+<div class="about-page">
+  <!-- Hero Section -->
+  <section class="about-hero">
+    <div class="container">
+      <div class="hero-content">
+        <button class="btn-back" (click)="goBack()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="m15 18-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Back to Home
+        </button>
+        <h1 class="page-title">About AL <span>Aik</span> Designs</h1>
+        <p class="page-subtitle">
+          Transforming outdoor spaces with innovative design, premium craftsmanship, 
+          and unparalleled attention to detail since 1994.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who We Are Section -->
+  <section class="who-we-are-section">
+    <div class="container">
+      <div class="section-content">
+        <h2 class="section-title">Who We Are</h2>
+        <div class="content-text">
+          <p>
+            Al Aik Landscaping & pools services has over 29 years in UAE. We are specialized in offering complete solution in Landscape and swimming pools services from design, build to maintaining your landscape and pools.
+          </p>
+          <p>
+            We ensure that each project is carried out to the highest professional standard with attention given to every detail, our dedicated and motivated team of professionals never stops creating new concepts and to introducing new trends, guides through each step of the project. Our experience and skill ensure customers satisfaction at all time.
+          </p>
+          <p>
+            Al Aik has experience delivering wide range of projects over the years from Residential & Commercial Building to Hotels, Parks, Resorts, Schools, Governments institutions, Palaces and Farms.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision, Mission, Story Section -->
+  <section class="vision-mission-story">
+    <div class="container">
+      <div class="row gy-3">
+        <!-- Our Vision -->
+        <div class="col-lg-4 info-container">
+          <div class="info-card">
+            <h3 class="card-title">Our Vision</h3>
+            <p class="card-content">
+              We exist to transform dreams into reality. As the leading innovator in luxury outdoor living, we set new standards through exquisite design, environmental stewardship, and unmatched client satisfaction. We craft breathtaking spaces that harmonize luxury with nature, creating the perfect backdrop for life's most cherished moments.
+            </p>
+          </div>
+        </div>
+
+        <!-- Our Mission -->
+        <div class="col-lg-4">
+          <div class="info-card">
+            <h3 class="card-title">Our Mission</h3>
+            <p class="card-content">
+              To create extraordinary outdoor environments that enhance our clients' quality of life through innovative design, superior craftsmanship, and cutting-edge technology, while maintaining the highest standards of integrity and service. We believe in team work and deliver complete solutions that save cost and time while contributing to environmental benefits.
+            </p>
+          </div>
+        </div>
+
+        <!-- Our Story -->
+        <div class="col-lg-4">
+          <div class="info-card">
+            <h3 class="card-title">Our Story</h3>
+            <p class="card-content">
+              Al Aik was established in UAE in the year 1994 as Irrigation specialist and extended its services as Landscaping & swimming Pool Specialist in the year 2014. With years of experience we have successfully delivered residential and commercial projects in UAE for our customers with satisfaction and to highest quality standard.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CEO Message Section -->
+  <section class="ceo-message-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-5">
+          <div class="ceo-image-container">
+            <img src="/assets/images/ceo-photo.jpg" alt="CEO Amr El Fiky" class="ceo-image">
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="ceo-content">
+            <h2 class="section-title">Message from Our CEO</h2>
+            <div class="message-content">
+              <p class="quote">
+                "At AL Aik Designs, we believe that your outdoor space should be more than just a backyard – it should be a sanctuary that reflects your lifestyle and brings your family together."
+              </p>
+              <p>
+                "Climate change and rapidly rising demand for comprehensive landscaping & Irrigation space has increased over the years in UAE. Our complete solution from Al Aik will not only save cost and time to the customer but also contribute to environmental benefits."
+              </p>
+              <p>
+                "Our commitment to excellence drives everything we do, from the initial design consultation to the final project walkthrough. We don't just build landscapes and pools; we create lasting memories and enhance the way you live."
+              </p>
+              <div class="ceo-signature">
+                <h4 class="ceo-name"> Amr El Fiky</h4>
+                <p class="ceo-title">CEO & Founder</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics Section -->
+  <app-statistics-section></app-statistics-section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Get answers to the most common questions about our services and process.</p>
+      </div>
+      
+      <div class="faq-container">
+        @for (faq of faqs; track faq.id) {
+          <div class="faq-item" [class.open]="faq.isOpen">
+            <div class="faq-question" (click)="toggleFAQ(faq.id)">
+              <h3>{{ faq.question }}</h3>
+              <div class="faq-icon" [class.rotated]="faq.isOpen">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </div>
+            <div class="faq-answer" [class.show]="faq.isOpen">
+              <div class="answer-content">
+                <p>{{ faq.answer }}</p>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA Section -->
+  <section class="contact-cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2 class="cta-title">Ready to Transform Your Outdoor Space?</h2>
+        <p class="cta-description">
+          Let's discuss your vision and create something extraordinary together. 
+          Contact us today for a free consultation.
+        </p>
+        <button class="btn-contact-cta" (click)="goToContact()">
+          Get Started Today
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <path d="m9 18 6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+</div>
