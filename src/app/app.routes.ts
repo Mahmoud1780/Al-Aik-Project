@@ -5,6 +5,7 @@ import { AboutPage } from './Features/Pages/about/about-page/about-page';
 import { ContactPage } from './Features/Pages/contact-us/contact-page/contact-page';
 import { ProjectDetails } from './Features/Pages/project-details/project-details';
 import { ServicePage } from './Features/Pages/service-page/service-page';
+import { Gallery } from './Features/Pages/gallery/gallery';
 
 export const routes: Routes = [
 
@@ -14,6 +15,7 @@ export const routes: Routes = [
             {path: 'home', component: HomePage, title: 'Home'},
             {path: 'about', component: AboutPage, title: 'About'},
             {path: 'contact', component: ContactPage, title: 'Contact-us'},
+            {path: 'gallery', component: Gallery, title: 'Gallery'},
             {path: 'projects/:slug', component: ProjectDetails, title: 'Project Details'},
             {path: 'services/:serviceId', component: ServicePage, title: 'Service Details'},
 

@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './hero-section.css'
 })
 export class HeroSection {
-  videoPath = '';
+  videoPath = 'assets/slogan.mp4';
   // assets/slogan.mp4';
   logoPath = 'assets/images/logo.jpg';
 }
