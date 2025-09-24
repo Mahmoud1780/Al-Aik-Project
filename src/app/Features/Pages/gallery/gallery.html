@@ -1,156 +1,175 @@
 <div class="gallery-page">
-  <!-- Hero Section -->
-  <section class="gallery-hero">
-    <div class="container">
-      <div class="hero-content">
-        <button class="btn-back" (click)="goBack()">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-            <path d="m15 18-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          Back to Home
-        </button>
-        <h1 class="page-title">Our <span>Gallery</span></h1>
-        <p class="page-subtitle">
-          Explore our portfolio of exceptional outdoor transformations and discover
-          the artistry behind every project we create.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Filter Tabs Section -->
-  <section class="filter-section">
-    <div class="container">
-      <div class="filter-tabs">
-        @for (tab of filterTabs; track tab.key) {
-          <button 
-            class="filter-tab"
-            [class.active]="activeFilter === tab.key"
-            (click)="setActiveFilter(tab.key)">
-            {{ tab.label }}
-            <span class="tab-count">({{ tab.count }})</span>
-          </button>
-        }
-      </div>
-    </div>
-  </section>
-
-  <!-- Gallery Grid Section -->
-  <section class="gallery-section">
-    <div class="container">
-      <div class="gallery-grid">
-        @for (image of filteredImages; track image.id; let i = $index) {
-          <div class="gallery-item" (click)="openImageModal(i)">
-            <div class="image-container">
-              <img [src]="image.url" [alt]="image.alt" class="gallery-image" (error)="onImageError($event)">
-              <div class="image-overlay">
-                <div class="overlay-content">
-                  <div class="overlay-icon">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                      <circle cx="12" cy="12" r="3"/>
+    <!-- Hero Section -->
+    <section class="gallery-hero">
+        <div class="container">
+            <div class="hero-content">
+                <button class="btn-back" (click)="goBack()">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                        <path d="m15 18-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
                     </svg>
-                  </div>
-                  <h4 class="image-title">{{ image.title }}</h4>
-                  <p class="image-category">{{ image.category | titlecase }}</p>
-                </div>
-              </div>
+                    Back to Home
+                </button>
+                <h1 class="page-title">Our <span>Gallery</span></h1>
+                <p class="page-subtitle">
+                    Explore our portfolio of exceptional outdoor transformations and discover
+                    the artistry behind every project we create.
+                </p>
             </div>
-          </div>
-        }
-      </div>
-
-      <!-- Empty State -->
-      @if (filteredImages.length === 0) {
-        <div class="empty-state">
-          <div class="empty-icon">
-            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-              <circle cx="9" cy="9" r="2"/>
-              <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/>
-            </svg>
-          </div>
-          <h3>No images found</h3>
-          <p>Try selecting a different category to view our work.</p>
         </div>
-      }
-    </div>
-  </section>
+    </section>
+    <!-- Video Slogan Section -->
+    <section class="video-slogan-section">
+        <div class="video-container">
+            <video #videoPlayer [src]="sloganVideoSrc" autoplay muted loop playsinline class="slogan-video"
+                (loadedmetadata)="onVideoLoaded()" (error)="onVideoError($event)">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-overlay">
+                <div class="slogan-content">
+                    <h2 class="slogan-title">Transforming Dreams Into Reality</h2>
+                    <p class="slogan-subtitle">Where Nature Meets Design</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Contact CTA Section -->
-  <section class="contact-cta-section">
-    <div class="container">
-      <div class="cta-content">
-        <h2 class="cta-title">Inspired by Our Work?</h2>
-        <p class="cta-description">
-          Let's create something beautiful together. Contact us today to discuss your next project
-          and see how we can transform your outdoor space.
-        </p>
-        <button class="btn-contact-cta" (click)="goToContact()">
-          Start Your Project
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-            <path d="m9 18 6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-      </div>
-    </div>
-  </section>
 
-  <!-- Image Modal -->
-  @if (showImageModal) {
+
+    <!-- Filter Tabs Section -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title"> Featured Gallery</h2>
+                <p class="section-subtitle">
+                    Browse through our collection of stunning outdoor spaces
+                </p>
+            </div>
+            <div class="filter-tabs">
+                @for (tab of filterTabs; track tab.key) {
+                <button class="filter-tab" [class.active]="activeFilter === tab.key" (click)="setActiveFilter(tab.key)">
+                    {{ tab.label }}
+                    <span class="tab-count">({{ tab.count }})</span>
+                </button>
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Grid Section -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="gallery-grid">
+                @for (image of filteredImages; track image.id; let i = $index) {
+                <div class="gallery-item" (click)="openImageModal(i)">
+                    <div class="image-container">
+                        <img [src]="image.url" [alt]="image.alt" class="gallery-image" (error)="onImageError($event)">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <div class="overlay-icon">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                        <circle cx="12" cy="12" r="3" />
+                                    </svg>
+                                </div>
+                                <h4 class="image-title">{{ image.title }}</h4>
+                                <p class="image-category">{{ image.category | titlecase }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                }
+            </div>
+
+            <!-- Empty State -->
+            @if (filteredImages.length === 0) {
+            <div class="empty-state">
+                <div class="empty-icon">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                        <circle cx="9" cy="9" r="2" />
+                        <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
+                    </svg>
+                </div>
+                <h3>No images found</h3>
+                <p>Try selecting a different category to view our work.</p>
+            </div>
+            }
+        </div>
+    </section>
+
+    <!-- Contact CTA Section -->
+    <section class="contact-cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Inspired by Our Work?</h2>
+                <p class="cta-description">
+                    Let's create something beautiful together. Contact us today to discuss your next project
+                    and see how we can transform your outdoor space.
+                </p>
+                <button class="btn-contact-cta" (click)="goToContact()">
+                    Start Your Project
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d="m9 18 6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Modal -->
+    @if (showImageModal) {
     <div class="image-modal" (click)="closeImageModal()">
-      <div class="modal-content" (click)="$event.stopPropagation()">
-        <!-- Close Button -->
-        <button class="modal-close" (click)="closeImageModal()">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="18" y1="6" x2="6" y2="18"/>
-            <line x1="6" y1="6" x2="18" y2="18"/>
-          </svg>
-        </button>
-
-        <!-- Navigation Arrows -->
-        <button class="modal-nav modal-prev" (click)="previousImage()">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="15,18 9,12 15,6"/>
-          </svg>
-        </button>
-
-        <button class="modal-nav modal-next" (click)="nextImage()">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="9,18 15,12 9,6"/>
-          </svg>
-        </button>
-
-        <!-- Main Image -->
-        <div class="modal-image-container">
-          <img 
-            [src]="getCurrentImage().url" 
-            [alt]="getCurrentImage().alt"
-            class="modal-image"
-            (error)="onImageError($event)">
-        </div>
-
-        <!-- Image Info -->
-        <div class="modal-info">
-          <h3 class="modal-title">{{ getCurrentImage().title }}</h3>
-          <p class="modal-category">{{ getCurrentImage().category | titlecase }}</p>
-          <div class="modal-counter">
-            {{ selectedImageIndex + 1 }} of {{ galleryImages.length }}
-          </div>
-        </div>
-
-        <!-- Thumbnail Navigation -->
-        <div class="modal-thumbnails">
-          @for (image of galleryImages; track image.id; let i = $index) {
-            <button 
-              class="thumbnail-btn"
-              [class.active]="i === selectedImageIndex"
-              (click)="selectedImageIndex = i">
-              <img [src]="image.url" [alt]="image.alt" class="thumbnail-image">
+        <div class="modal-content" (click)="$event.stopPropagation()">
+            <!-- Close Button -->
+            <button class="modal-close" (click)="closeImageModal()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
             </button>
-          }
+
+            <!-- Navigation Arrows -->
+            <button class="modal-nav modal-prev" (click)="previousImage()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="15,18 9,12 15,6" />
+                </svg>
+            </button>
+
+            <button class="modal-nav modal-next" (click)="nextImage()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9,18 15,12 9,6" />
+                </svg>
+            </button>
+
+            <!-- Main Image -->
+            <div class="modal-image-container">
+                <img [src]="getCurrentImage().url" [alt]="getCurrentImage().alt" class="modal-image"
+                    (error)="onImageError($event)">
+            </div>
+
+            <!-- Image Info -->
+            <div class="modal-info">
+                <h3 class="modal-title">{{ getCurrentImage().title }}</h3>
+                <p class="modal-category">{{ getCurrentImage().category | titlecase }}</p>
+                <div class="modal-counter">
+                    {{ selectedImageIndex + 1 }} of {{ galleryImages.length }}
+                </div>
+            </div>
+
+            <!-- Thumbnail Navigation -->
+            <div class="modal-thumbnails">
+                @for (image of galleryImages; track image.id; let i = $index) {
+                <button class="thumbnail-btn" [class.active]="i === selectedImageIndex"
+                    (click)="selectedImageIndex = i">
+                    <img [src]="image.url" [alt]="image.alt" class="thumbnail-image">
+                </button>
+                }
+            </div>
         </div>
-      </div>
     </div>
-  }
+    }
 </div>

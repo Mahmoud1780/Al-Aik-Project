@@ -26,6 +26,7 @@ export class ProjectDetails implements OnInit {
   projectGallery = signal<ProjectImage[]>([]);
 
   projectPath =  'assets/Projects/';
+  // 'https://raw.githubusercontent.com/Mahmoud1780/Al-Aik-images/Projects/'
 
   // Sample project data with gallery images
   private projects: (ProjectDet  & { gallery: ProjectImage[] })[] = [

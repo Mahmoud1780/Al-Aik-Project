@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { GalleryImage } from '../../../Shared/Interfaces/gallery-image';
 import { Router } from '@angular/router';
 import { TitleCasePipe } from '@angular/common';
@@ -13,6 +13,10 @@ export class Gallery implements OnInit {
   activeFilter: 'all' | 'pools' | 'landscapes' = 'all';
   showImageModal = false;
   selectedImageIndex = 0;
+  @ViewChild('videoPlayer') videoPlayer!: ElementRef<HTMLVideoElement>;
+  startTime = 71;
+
+  sloganVideoSrc = 'assets/slogan.mp4'
   
   galleryImages: GalleryImage[] = [
     // Pool Images
@@ -40,6 +44,7 @@ export class Gallery implements OnInit {
 
   ngOnInit(): void {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    this.setVideoStartTime();
   }
 
   get filteredImages(): GalleryImage[] {
@@ -121,5 +126,31 @@ export class Gallery implements OnInit {
 
   onImageError(event: any): void {
     event.target.src = 'assets/images/placeholder-gallery.jpg';
+  }
+  onVideoLoaded() {
+    this.setVideoStartTime();
+  }
+
+  private setVideoStartTime() {
+    if (this.videoPlayer?.nativeElement) {
+      const video = this.videoPlayer.nativeElement;
+      
+      // Set the current time when metadata is loaded
+      video.currentTime = this.startTime;
+      
+      // Ensure it stays at the start time when loop restarts
+      video.addEventListener('timeupdate', () => {
+        if (video.currentTime >= video.duration - 0.5) { // Near the end
+          video.currentTime = this.startTime;
+        }
+      });
+    }
+  }
+  onVideoError(event: any): void {
+    // Hide video container if video fails to load
+    const videoContainer = event.target.closest('.video-slogan-section');
+    if (videoContainer) {
+      videoContainer.style.display = 'none';
+    }
   }
 }
