@@ -68,25 +68,28 @@
   <!-- Content Section -->
   <div class="content-wrapper">
     <div class="container">
-      <!-- Project Overview -->
-      <section class="project-section">
-        <h2>Project Overview</h2>
-        <p class="lead">{{ proj.description }}</p>
-      </section>
+      <div class="row">
+        <div class="col-lg-8">
+          <!-- Project Overview -->
+          <section class="project-section">
+            <h2>Project Overview</h2>
+            <p class="lead">{{ proj.description }}</p>
+          </section>
 
-      <!-- Key Features -->
-      <section class="project-section">
-        <div class="row">
-          <div class="col-lg-8">
+          <!-- Key Features -->
+          <section class="project-section">
+
             <h2>Key Features</h2>
             <ul class="features-list">
               @for (feature of proj.keyFeatures; track feature) {
               <li>{{ feature }}</li>
               }
             </ul>
-          </div>
 
-          <div class="col-lg-4">
+          </section>
+        </div>
+        <div class="col-lg-4">
+          <section>
             <div class="project-sidebar">
               <div class="info-card">
                 <h4>Project Details</h4>
@@ -130,9 +133,9 @@
                 <button class="btn btn-cta">Get Quote</button>
               </div>
             </div>
-          </div>
+          </section>
         </div>
-      </section>
+      </div>
 
       <!-- Project Gallery -->
       <section class="project-section">
