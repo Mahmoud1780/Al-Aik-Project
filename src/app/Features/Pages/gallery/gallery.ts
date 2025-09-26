@@ -134,6 +134,7 @@ export class Gallery implements OnInit {
   private setVideoStartTime() {
     if (this.videoPlayer?.nativeElement) {
       const video = this.videoPlayer.nativeElement;
+      video.muted = true;
       
       // Set the current time when metadata is loaded
       video.currentTime = this.startTime;

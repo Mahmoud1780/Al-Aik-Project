@@ -65,6 +65,11 @@
   backdrop-filter: blur(10px);
   margin-bottom: 2rem;
 }
+.back-button{
+  position: absolute;
+  top: 105px;
+  left: 30px;
+}
 
 .btn-back:hover {
   background: white;
@@ -365,6 +370,9 @@
     height: 50vh;
     background-attachment: scroll;
   }
+  .service-info{
+    padding: 30px 0 0;
+  }
   
   .service-title {
     font-size: 2.2rem;
@@ -408,7 +416,10 @@
 
 @media (max-width: 576px) {
   .service-hero {
-    height: 40vh;
+    height: 50vh;
+  }
+  .service-info{
+    padding: 60px 0 0;
   }
   
   .service-title {

@@ -25,7 +25,7 @@ export class ProjectDetails implements OnInit {
   // Project gallery images
   projectGallery = signal<ProjectImage[]>([]);
 
-  projectPath =  'assets/Projects/';
+  projectPath =  'https://raw.githubusercontent.com/Mahmoud1780/Al-Aik-images/refs/heads/main/Projects/';
   // 'https://raw.githubusercontent.com/Mahmoud1780/Al-Aik-images/Projects/'
 
   // Sample project data with gallery images
@@ -34,7 +34,8 @@ export class ProjectDetails implements OnInit {
       id: 1,
       title: 'Park Gate Residence',
       description: 'This award-winning infinity pool design seamlessly blends luxury with functionality. The project features a 60-foot infinity edge that creates the illusion of water extending to the horizon, complemented by integrated spa jets and underwater LED lighting systems.',
-      image: '/' + this.projectPath + 'Landscape/park gate/main.jpg',
+      //image: '/' + this.projectPath + 'Landscape/park gate/main.jpg',
+      image:  this.projectPath + 'Landscape/park gate/main.jpg',
       category: 'landscaping',
       slug: 'Park Gate Residence',
        keyFeatures: [
