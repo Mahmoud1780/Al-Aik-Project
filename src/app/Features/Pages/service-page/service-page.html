@@ -23,7 +23,7 @@
   <!-- Service Content -->
   @else if (service(); as srv) {
   <!-- Hero Section -->
-  <div class="service-hero" [style.background-image]="'url(' + srv.heroImage + ')'">
+  <div class="service-hero" [style]="getHeroStyles(srv.heroImage)">
     <div class="hero-overlay">
       <div class="back-button d-flex align-items-center justify-content-start">
         <button class="btn-back" (click)="goBack()">
@@ -74,29 +74,11 @@
               }
             </div>
           </section>
-
-          <!-- Service Gallery -->
-          <!-- <section class="service-section">
-              <h2>Service Gallery</h2>
-              <div class="gallery-grid">
-                @for (image of srv.gallery; track image.url) {
-                  <div class="gallery-item">
-                    <img [src]="image.url" [alt]="image.alt" class="gallery-image" (error)="onImageError($event)">
-                    <div class="gallery-overlay">
-                      <svg class="expand-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <path d="m21 21-6-6m6 6v-4.5m0 4.5h-4.5" stroke="currentColor" stroke-width="2"/>
-                        <path d="m3 3 6 6m-6-6v4.5m0-4.5h4.5" stroke="currentColor" stroke-width="2"/>
-                      </svg>
-                    </div>
-                  </div>
-                }
-              </div>
-            </section> -->
         </div>
 
         <!-- Sticky Sidebar -->
         <div class="col-lg-4">
-          <div class="service-sidebar sticky-top">
+          <div class="service-sidebar">
             <div class="benefits-card">
               <h3>Service Benefits</h3>
               <div class="benefits-list">
@@ -132,7 +114,61 @@
           </div>
         </div>
       </div>
+
+      <!-- Service Gallery - UPDATED WITH MODAL FUNCTIONALITY -->
+      <section class="service-section">
+        <h2>Service Gallery</h2>
+        <div class="gallery-grid">
+          @for (image of srv.gallery; track image.url; let index = $index) {
+          <div class="gallery-item" (click)="openImageModal(index)">
+            <img [src]="image.url" [alt]="image.alt" class="gallery-image" (error)="onImageError($event)">
+            <div class="gallery-overlay">
+              <svg class="expand-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="m21 21-6-6m6 6v-4.5m0 4.5h-4.5" stroke="currentColor" stroke-width="2" />
+                <path d="m3 3 6 6m-6-6v4.5m0-4.5h4.5" stroke="currentColor" stroke-width="2" />
+              </svg>
+            </div>
+          </div>
+          }
+        </div>
+      </section>
     </div>
   </div>
+
+  <!-- Image Modal - ADD THIS NEW SECTION -->
+  @if (showImageModal() && srv.gallery) {
+  <div class="image-modal" (click)="closeImageModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <!-- Close Button -->
+      <button class="modal-close" (click)="closeImageModal()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </button>
+
+      <!-- Navigation Arrows -->
+      <button class="modal-nav modal-prev" (click)="previousImage()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <polyline points="15,18 9,12 15,6" stroke="currentColor" stroke-width="2" />
+        </svg>
+      </button>
+
+      <img [src]="srv.gallery[selectedImageIndex()].url" [alt]="srv.gallery[selectedImageIndex()].alt"
+        class="modal-image" (error)="onImageError($event)">
+
+      <button class="modal-nav modal-next" (click)="nextImage()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <polyline points="9,18 15,12 9,6" stroke="currentColor" stroke-width="2" />
+        </svg>
+      </button>
+
+      <!-- Image Counter -->
+      <div class="modal-counter">
+        {{ selectedImageIndex() + 1 }} / {{ srv.gallery.length }}
+      </div>
+    </div>
+  </div>
+  }
   }
 </div>

@@ -26,7 +26,7 @@ export class ProjectDetails implements OnInit {
   projectGallery = signal<ProjectImage[]>([]);
 
   projectPath =  'https://raw.githubusercontent.com/Mahmoud1780/Al-Aik-images/refs/heads/main/Projects/';
-  // 'https://raw.githubusercontent.com/Mahmoud1780/Al-Aik-images/Projects/'
+  // projectPath =  'assets/Projects/';
 
   // Sample project data with gallery images
   private projects: (ProjectDet  & { gallery: ProjectImage[] })[] = [
@@ -80,7 +80,8 @@ export class ProjectDetails implements OnInit {
       id: 2,
       title: 'Lake Tower',
       description: 'Complete landscape transformation featuring custom pergola, outdoor lighting, native plantings, and sustainable irrigation system creating a perfect outdoor living space.',
-      image: '/' + this.projectPath + 'Landscape/Lake tower/main.JPG',
+      // image: '/' + this.projectPath + 'Landscape/Lake tower/main.JPG',
+      image: this.projectPath + 'Landscape/Lake tower/main.JPG',
       category: 'landscaping',
       slug: 'Lake Tower',
        keyFeatures: [
@@ -110,7 +111,8 @@ export class ProjectDetails implements OnInit {
       id: 3,
       title: 'Mr. Ali Villa',
       description: 'Tranquil water feature with surrounding zen garden, incorporating meditation spaces and carefully curated plant selections for ultimate relaxation.',
-      image: '/' + this.projectPath + 'swimming/ali villa/main.jpeg',
+      // image: '/' + this.projectPath + 'swimming/ali villa/main.jpeg',
+      image: this.projectPath + 'swimming/ali villa/main.jpeg',
       category: 'pools',
       slug: 'Mr. Ali Villa',
        keyFeatures: [
@@ -135,7 +137,8 @@ export class ProjectDetails implements OnInit {
       id: 4,
       title: 'Burj Al Nujoom',
       description: 'Burj Al Nujoom is a luxury residential tower that offers premium living in the heart of Downtown Dubai, featuring breathtaking views of the Burj Khalifa and cityscape. The project includes the construction of sophisticated aquatic facilities for its health club level.',
-      image: '/' + this.projectPath + 'swimming/Al nujoom tower/main.jpg',
+      // image: '/' + this.projectPath + 'swimming/Al nujoom tower/main.jpg',
+      image: this.projectPath + 'swimming/Al nujoom tower/main.jpg',
       category: 'pools',
       slug: 'Burj Al Nujoom',
        keyFeatures: [
@@ -162,7 +165,8 @@ export class ProjectDetails implements OnInit {
       id: 5,
       title: 'Aura Tower',
       description: 'This project involved creating an exclusive outdoor retreat for a private G+1 villa on Palm Jumeirah, featuring premium landscaping and a sophisticated swimming pool designed to maximize the luxurious waterfront setting.',
-      image: '/' + this.projectPath + 'Landscape/aura tower/main1.jpg',
+      // image: '/' + this.projectPath + 'Landscape/aura tower/main1.jpg',
+      image: this.projectPath + 'Landscape/aura tower/main1.jpg',
       category: 'landscaping',
       slug: 'Aura Tower',
        keyFeatures: [
@@ -191,7 +195,8 @@ export class ProjectDetails implements OnInit {
       id: 6,
       title: 'Al Safa Community School',
       description: 'The Al Safa Community School project involved creating a complete aquatic center for a premier educational institution located in Dubai Land\'s ARJAN district, adjacent to the renowned Miracle Garden.',
-      image: '/' + this.projectPath + 'swimming/Al SAFA/main.jpg',
+      // image: '/' + this.projectPath + 'swimming/Al SAFA/main.jpg',
+      image: this.projectPath + 'swimming/Al SAFA/main.jpg',
       category: 'pools',
       slug: 'Al Safa Community School',
        keyFeatures: [
@@ -222,7 +227,8 @@ export class ProjectDetails implements OnInit {
       id: 7,
       title: 'Sparkle Tower',
       description: 'This project involved comprehensive landscaping and exterior enhancement for the prestigious Sparkle Tower in Dubai Marina\'s JBR area, creating an upscale outdoor environment for the twin-tower residential complex.',
-      image: '/' + this.projectPath + 'Landscape/sparkle tower/main.jpg',
+      // image: '/' + this.projectPath + 'Landscape/sparkle tower/main.jpg',
+      image: this.projectPath + 'Landscape/sparkle tower/main.jpg',
       category: 'landscaping',
       slug: 'Sparkle Tower',
        keyFeatures: [
@@ -254,7 +260,8 @@ export class ProjectDetails implements OnInit {
       id: 8,
       title: 'JADAF',
       description: 'The Al Safa Community School project involved creating a complete aquatic center for a premier educational institution located in Dubai Land\'s ARJAN district, adjacent to the renowned Miracle Garden.',
-      image: '/' + this.projectPath + 'Landscape/JADAF/main.jpg',
+      // image: '/' + this.projectPath + 'Landscape/JADAF/main.jpg',
+      image: this.projectPath + 'Landscape/JADAF/main.jpg',
       category: 'landscaping',
       slug: 'JADAF',
        keyFeatures: [
@@ -284,7 +291,8 @@ export class ProjectDetails implements OnInit {
       id: 9,
       title: 'Damac Navitos',
       description: 'The Al Safa Community School project involved creating a complete aquatic center for a premier educational institution located in Dubai Land\'s ARJAN district, adjacent to the renowned Miracle Garden.',
-      image: '/' + this.projectPath + 'swimming/Damac navitos/main.jpg',
+      // image: '/' + this.projectPath + 'swimming/Damac navitos/main.jpg',
+      image: this.projectPath + 'swimming/Damac navitos/main.jpg',
       category: 'pools',
       slug: 'Damac Navitos',
        keyFeatures: [

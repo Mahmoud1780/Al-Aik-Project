@@ -179,7 +179,7 @@
 }
 
 .project-section {
-  margin-bottom: 4rem;
+  margin: 3rem 0 4rem;
 }
 
 .project-section h2 {
@@ -471,7 +471,19 @@
     margin-top: 3rem;
   }
 }
+@media (max-width: 1200px){
+  .modal-prev {
+    left: -40px;
+  }
 
+  .modal-next {
+    right: -40px;
+  }
+  .modal-close {
+    right: -40px;
+    top: -50px;
+  }
+}
 @media (max-width: 992px) {}
 
 @media (max-width: 768px) {

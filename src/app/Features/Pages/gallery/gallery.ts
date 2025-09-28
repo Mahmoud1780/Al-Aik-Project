@@ -17,18 +17,21 @@ export class Gallery implements OnInit {
   startTime = 71;
 
   sloganVideoSrc = 'assets/slogan.mp4'
+
+  // projectPath =  'https://raw.githubusercontent.com/Mahmoud1780/Al-Aik-images/refs/heads/main/Services/';
+  projectPath =  'assets/Services/';
   
   galleryImages: GalleryImage[] = [
     // Pool Images
-    { id: 1, url: 'assets/images/gallery/pool-1.jpg', alt: 'Luxury infinity pool with spa', category: 'pools', title: 'Infinity Pool with Integrated Spa' },
-    { id: 2, url: 'assets/images/gallery/pool-2.jpg', alt: 'Modern geometric pool design', category: 'pools', title: 'Modern Geometric Pool Design' },
-    { id: 3, url: 'assets/images/gallery/pool-3.jpg', alt: 'Natural stone pool with waterfall', category: 'pools', title: 'Natural Stone Pool with Waterfall' },
-    { id: 4, url: 'assets/images/gallery/pool-4.jpg', alt: 'Resort style pool with cabana', category: 'pools', title: 'Resort Style Pool with Cabana' },
-    { id: 5, url: 'assets/images/gallery/pool-5.jpg', alt: 'Contemporary pool with fire features', category: 'pools', title: 'Contemporary Pool with Fire Features' },
-    { id: 6, url: 'assets/images/gallery/pool-6.jpg', alt: 'Rooftop pool with city views', category: 'pools', title: 'Rooftop Pool with City Views' },
-    { id: 7, url: 'assets/images/gallery/pool-7.jpg', alt: 'Family pool with shallow area', category: 'pools', title: 'Family Pool with Play Area' },
-    { id: 8, url: 'assets/images/gallery/pool-8.jpg', alt: 'Lap pool with underwater lighting', category: 'pools', title: 'Lap Pool with LED Lighting' },
-    
+    { id: 1, url: this.projectPath + 'Swimming Pools/Custom Swimming Pools/service/1.jpeg', alt: 'Luxury infinity pool with spa', category: 'pools', title: 'Infinity Pool with Integrated Spa' },
+    { id: 2, url: this.projectPath + 'Swimming Pools/Custom Swimming Pools/service/2.jpg', alt: 'Modern geometric pool design', category: 'pools', title: 'Modern Geometric Pool Design' },
+    { id: 3, url: this.projectPath + 'Swimming Pools/Custom Swimming Pools/service/3.jpg', alt: 'Natural stone pool with waterfall', category: 'pools', title: 'Natural Stone Pool with Waterfall' },
+    { id: 4, url: this.projectPath + 'Swimming Pools/Custom Swimming Pools/service/4.jpg', alt: 'Resort style pool with cabana', category: 'pools', title: 'Resort Style Pool with Cabana' },
+    { id: 5, url: this.projectPath + 'Swimming Pools/Custom Swimming Pools/service/5.jpg', alt: 'Contemporary pool with fire features', category: 'pools', title: 'Contemporary Pool with Fire Features' },
+    { id: 6, url: this.projectPath + 'Swimming Pools/Custom Swimming Pools/service/6.jpg', alt: 'Rooftop pool with city views', category: 'pools', title: 'Rooftop Pool with City Views' },
+    { id: 7, url: this.projectPath + 'Swimming Pools/Custom Swimming Pools/service/7.jpg', alt: 'Family pool with shallow area', category: 'pools', title: 'Family Pool with Play Area' },
+    { id: 8, url: this.projectPath + 'Swimming Pools/Custom Swimming Pools/service/8.jpg', alt: 'Lap pool with underwater lighting', category: 'pools', title: 'Lap Pool with LED Lighting' },
+
     // Landscape Images
     { id: 9, url: 'assets/images/gallery/landscape-1.jpg', alt: 'Desert landscape with native plants', category: 'landscapes', title: 'Desert Landscape Design' },
     { id: 10, url: 'assets/images/gallery/landscape-2.jpg', alt: 'Tropical garden with palm trees', category: 'landscapes', title: 'Tropical Garden Paradise' },
