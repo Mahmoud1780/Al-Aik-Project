@@ -23,24 +23,28 @@ export class Gallery implements OnInit {
   
   galleryImages: GalleryImage[] = [
     // Pool Images
-    { id: 1, url: this.projectPath + 'Swimming Pools/Custom Swimming Pools/service/1.jpeg', alt: 'Luxury infinity pool with spa', category: 'pools', title: 'Infinity Pool with Integrated Spa' },
-    { id: 2, url: this.projectPath + 'Swimming Pools/Custom Swimming Pools/service/2.jpg', alt: 'Modern geometric pool design', category: 'pools', title: 'Modern Geometric Pool Design' },
-    { id: 3, url: this.projectPath + 'Swimming Pools/Custom Swimming Pools/service/3.jpg', alt: 'Natural stone pool with waterfall', category: 'pools', title: 'Natural Stone Pool with Waterfall' },
-    { id: 4, url: this.projectPath + 'Swimming Pools/Custom Swimming Pools/service/4.jpg', alt: 'Resort style pool with cabana', category: 'pools', title: 'Resort Style Pool with Cabana' },
-    { id: 5, url: this.projectPath + 'Swimming Pools/Custom Swimming Pools/service/5.jpg', alt: 'Contemporary pool with fire features', category: 'pools', title: 'Contemporary Pool with Fire Features' },
-    { id: 6, url: this.projectPath + 'Swimming Pools/Custom Swimming Pools/service/6.jpg', alt: 'Rooftop pool with city views', category: 'pools', title: 'Rooftop Pool with City Views' },
-    { id: 7, url: this.projectPath + 'Swimming Pools/Custom Swimming Pools/service/7.jpg', alt: 'Family pool with shallow area', category: 'pools', title: 'Family Pool with Play Area' },
-    { id: 8, url: this.projectPath + 'Swimming Pools/Custom Swimming Pools/service/8.jpg', alt: 'Lap pool with underwater lighting', category: 'pools', title: 'Lap Pool with LED Lighting' },
+    { id: 1, url: this.projectPath + 'Swimming Pools/Custom Swimming Pools/service/6.jpg', alt: 'Luxury infinity pool with spa', category: 'pools', title: 'Infinity Pool with Integrated Spa' },
+    { id: 2, url: this.projectPath + 'Swimming Pools/Custom Swimming Pools/service/4.jpg', alt: 'Modern geometric pool design', category: 'pools', title: 'Modern Geometric Pool Design' },
+    {   id: 3, url: this.projectPath + 'Swimming Pools/Custom Swimming Pools/service/2.jpg', alt: 'Natural stone pool with waterfall', category: 'pools', title: 'Natural Stone Pool with Waterfall' },
+    { id: 4, url: this.projectPath + 'Swimming Pools/Custom Swimming Pools/service/1.jpeg', alt: 'Resort style pool with cabana', category: 'pools', title: 'Resort Style Pool with Cabana' },
+    {    id: 5, url: this.projectPath + 'Swimming Pools/Jacuzzi & Spa/service/main.jpg', alt: 'Contemporary pool with fire features', category: 'pools', title: 'Contemporary Pool with Fire Features' },
+    { id: 6, url: this.projectPath + 'Swimming Pools/Custom Swimming Pools/service/main.jpg', alt: 'Rooftop pool with city views', category: 'pools', title: 'Rooftop Pool with City Views' },
+    { id: 7, url: this.projectPath + 'Swimming Pools/Water Features & Fountains/service/6.jpg', alt: 'Family pool with shallow area', category: 'pools', title: 'Family Pool with Play Area' },
+    {    id: 8, url: this.projectPath + 'Swimming Pools/Pool Animation Lighting/service/main.jpg', alt: 'Lap pool with underwater lighting', category: 'pools', title: 'Lap Pool with LED Lighting' },    
+    { id: 9, url: this.projectPath + 'Swimming Pools/Pool Animation Lighting/service/5.jpg', alt: 'Lap pool with underwater lighting', category: 'pools', title: 'Lap Pool with LED Lighting' },
+
 
     // Landscape Images
-    { id: 9, url: 'assets/images/gallery/landscape-1.jpg', alt: 'Desert landscape with native plants', category: 'landscapes', title: 'Desert Landscape Design' },
-    { id: 10, url: 'assets/images/gallery/landscape-2.jpg', alt: 'Tropical garden with palm trees', category: 'landscapes', title: 'Tropical Garden Paradise' },
-    { id: 11, url: 'assets/images/gallery/landscape-3.jpg', alt: 'Modern minimalist landscape', category: 'landscapes', title: 'Modern Minimalist Garden' },
-    { id: 12, url: 'assets/images/gallery/landscape-4.jpg', alt: 'Mediterranean style courtyard', category: 'landscapes', title: 'Mediterranean Courtyard' },
-    { id: 13, url: 'assets/images/gallery/landscape-5.jpg', alt: 'Zen garden with water feature', category: 'landscapes', title: 'Zen Garden with Water Feature' },
-    { id: 14, url: 'assets/images/gallery/landscape-6.jpg', alt: 'English garden with pergola', category: 'landscapes', title: 'English Garden with Pergola' },
-    { id: 15, url: 'assets/images/gallery/landscape-7.jpg', alt: 'Rooftop garden terrace', category: 'landscapes', title: 'Rooftop Garden Terrace' },
-    { id: 16, url: 'assets/images/gallery/landscape-8.jpg', alt: 'Formal garden with fountain', category: 'landscapes', title: 'Formal Garden with Fountain' }
+    { id: 9, url: this.projectPath + 'Landscape/Soft & Hard Landscape/service/10.jpg', alt: 'Desert landscape with native plants', category: 'landscapes', title: 'Desert Landscape Design' },
+    { id: 10, url: this.projectPath + 'Landscape/Soft & Hard Landscape/service/7.JPG', alt: 'Tropical garden with palm trees', category: 'landscapes', title: 'Tropical Garden Paradise' },
+    { id: 11, url: this.projectPath + 'Landscape/Soft & Hard Landscape/service/12.jpg', alt: 'Modern minimalist landscape', category: 'landscapes', title: 'Modern Minimalist Garden' },
+    { id: 12, url: this.projectPath + 'Landscape/Soft & Hard Landscape/service/13.jpg', alt: 'Mediterranean style courtyard', category: 'landscapes', title: 'Mediterranean Courtyard' },
+    { id: 13, url: this.projectPath + 'Landscape/Soft & Hard Landscape/service/main.jpg', alt: 'Zen garden with water feature', category: 'landscapes', title: 'Zen Garden with Water Feature' },
+    { id: 14, url: this.projectPath + 'Landscape/Pergola & Gazebo/service/main.jpg', alt: 'English garden with pergola', category: 'landscapes', title: 'English Garden with Pergola' },
+    { id: 15, url: this.projectPath + 'Landscape/Landscape Lighting/service/main.jpg', alt: 'Rooftop garden terrace', category: 'landscapes', title: 'Rooftop Garden Terrace' },
+    { id: 16, url: this.projectPath + 'Landscape/Irrigation & Sprinklers/service/9.JPG', alt: 'Formal garden with fountain', category: 'landscapes', title: 'Formal Garden with Fountain' },
+    { id: 16, url: this.projectPath + 'Landscape/Irrigation & Sprinklers/service/main.JPG', alt: 'Formal garden with fountain', category: 'landscapes', title: 'Formal Garden with Fountain' }
+
   ];
 
   constructor(private router: Router) {}
