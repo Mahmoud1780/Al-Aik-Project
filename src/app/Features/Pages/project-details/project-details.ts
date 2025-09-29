@@ -157,8 +157,9 @@ export class ProjectDetails implements OnInit {
         { id: 1, url: this.projectPath + 'swimming/Al nujoom tower/main1.jpg', alt: 'Pool overview' },
         { id: 2, url: this.projectPath + 'swimming/Al nujoom tower/1.jpg', alt: 'Fire feature' },
         { id: 3, url: this.projectPath + 'swimming/Al nujoom tower/IMAG0849.jpg', alt: 'Outdoor kitchen' },
-        { id: 4, url: this.projectPath + 'swimming/Al nujoom tower/IMAG0944.jpg', alt: 'Evening ambiance' },
-        { id: 5, url: this.projectPath + 'swimming/Al nujoom tower/IMAG0945.jpg', alt: 'Evening ambiance' }
+        { id: 4, url: this.projectPath + 'swimming/Al nujoom tower/main.jpg', alt: 'Evening ambiance' },
+        { id: 5, url: this.projectPath + 'swimming/Al nujoom tower/IMAG0944.jpg', alt: 'Evening ambiance' },
+        { id: 6, url: this.projectPath + 'swimming/Al nujoom tower/IMAG0945.jpg', alt: 'Evening ambiance' }
 
       ]
     },
