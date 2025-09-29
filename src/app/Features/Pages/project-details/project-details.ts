@@ -1,12 +1,13 @@
 import { Component, HostListener, inject, OnInit, signal } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { ProjectImage } from '../../../Shared/Interfaces/project-image';
 import { TitleCasePipe } from '@angular/common';
 import { ProjectDet } from '../../../Shared/Interfaces/project-det';
 
+
 @Component({
   selector: 'app-project-details',
-  imports: [TitleCasePipe],
+  imports: [TitleCasePipe, RouterLink],
   templateUrl: './project-details.html',
   styleUrl: './project-details.css'
 })

@@ -24,8 +24,8 @@ export class Gallery implements OnInit {
   galleryImages: GalleryImage[] = [
     // Pool Images
     { id: 1, url: this.projectPath + 'Swimming Pools/Custom Swimming Pools/service/6.jpg', alt: 'Luxury infinity pool with spa', category: 'pools', title: 'Infinity Pool with Integrated Spa' },
-    { id: 2, url: this.projectPath + 'Swimming Pools/Custom Swimming Pools/service/4.jpg', alt: 'Olympic swimming pool design', category: 'pools', title: 'Olympic swimming pool Design' },
-    {   id: 3, url: this.projectPath + 'Swimming Pools/Custom Swimming Pools/service/2.jpg', alt: 'Natural stone pool with waterfall', category: 'pools', title: 'Natural Stone Pool with Waterfall' },
+    { id: 2, url: this.projectPath + 'Swimming Pools/Custom Swimming Pools/service/4.jpg', alt: 'Modern Geometric Pool Design', category: 'pools', title: 'Modern Geometric Pool Design' },
+    {   id: 3, url: this.projectPath + 'Swimming Pools/Custom Swimming Pools/service/2.jpg', alt: 'Olympic swimming pool Design', category: 'pools', title: 'Olympic swimming pool Design' },
     { id: 4, url: this.projectPath + 'Swimming Pools/Custom Swimming Pools/service/1.jpeg', alt: 'Resort style pool with cabana', category: 'pools', title: 'Resort Style Pool with Cabana' },
     {    id: 5, url: this.projectPath + 'Swimming Pools/Jacuzzi & Spa/service/main.jpg', alt: 'Indoor jacuzzi tub', category: 'pools', title: 'Indoor jacuzzi tub' },
     { id: 6, url: this.projectPath + 'Swimming Pools/Custom Swimming Pools/service/main.jpg', alt: 'Rooftop pool with city views', category: 'pools', title: 'Rooftop Pool with City Views' },
