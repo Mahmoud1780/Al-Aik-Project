@@ -2,23 +2,32 @@
   <div class="container">
     <div class="services-grid">
       <a [routerLink]="['/services', 'environmental-services']" class="service-card">
-        <div class="card-content">
-          <h3 class="card-title">Environmental Services</h3>
-          <p class="card-description">Sustainable design solutions for eco-conscious clients</p>
+        <div class="card-content d-flex">
+          <div><i class="fa-solid fa-shield-halved" [style.color]="'#235C45'" style="font-size: 30px;"></i></div>
+          <div>
+            <h3 class="card-title">Environmental Services</h3>
+            <p class="card-description">Sustainable design solutions for eco-conscious clients</p>
+          </div>
         </div>
       </a>
-      
+
       <a [routerLink]="['/services', 'digital-iot-solutions']" class="service-card">
-        <div class="card-content">
-          <h3 class="card-title">Digital IoT Solutions</h3>
-          <p class="card-description">Smart technology integration for modern outdoor living</p>
+        <div class="card-content d-flex">
+          <div><i class="fa-solid fa-microchip" [style.color]="'#235C45'" style="font-size: 30px;"></i></div>
+          <div>
+            <h3 class="card-title">Digital IoT Solutions</h3>
+            <p class="card-description">Smart technology integration for modern outdoor living</p>
+          </div>
         </div>
       </a>
-      
+
       <a [routerLink]="['/services', '3d-design-visualization']" class="service-card">
-        <div class="card-content">
-          <h3 class="card-title">3D Design & Visualization</h3>
-          <p class="card-description">Detailed 3D renderings to visualize your dream space</p>
+        <div class="card-content d-flex">
+          <div><i class="fa-solid fa-cubes" [style.color]="'#235C45'" style="font-size: 30px;"></i></div>
+          <div>
+            <h3 class="card-title">3D Design & Visualization</h3>
+            <p class="card-description">Detailed 3D renderings to visualize your dream space</p>
+          </div>
         </div>
       </a>
     </div>
