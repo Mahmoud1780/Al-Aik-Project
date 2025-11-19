@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { Router } from '@angular/router';
 import { ContactUsSection } from '../../home/components/contact-us-section/contact-us-section';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-contact-page',
@@ -19,11 +20,12 @@ export class ContactPage implements OnInit {
     city: "Beverly Hills, CA 90210"
   };
 
-  constructor(private router: Router) {}
+  constructor(@Inject(PLATFORM_ID) private platformId: Object, private router: Router) {}
 
   ngOnInit(): void {
-    // Scroll to top when component loads
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (isPlatformBrowser(this.platformId)) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   }
 
   goBack(): void {

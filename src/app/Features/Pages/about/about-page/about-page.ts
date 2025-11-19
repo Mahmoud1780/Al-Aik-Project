@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { Router } from '@angular/router';
 import { FAQ } from '../../../../Shared/Interfaces/faq';
 import { StatisticsSection } from "../../home/components/statistics-section/statistics-section";
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-about-page',
@@ -50,11 +51,12 @@ export class AboutPage implements OnInit {
     }
   ];
 
-  constructor(private router: Router) {}
+  constructor(@Inject(PLATFORM_ID) private platformId: Object, private router: Router) {}
 
   ngOnInit(): void {
-    // Scroll to top when component loads
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (isPlatformBrowser(this.platformId)) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   }
 
   goBack(): void {

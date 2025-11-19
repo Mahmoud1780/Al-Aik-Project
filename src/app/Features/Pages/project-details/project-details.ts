@@ -1,7 +1,7 @@
-import { Component, HostListener, inject, OnInit, signal } from '@angular/core';
+import { Component, HostListener, Inject, inject, OnInit, PLATFORM_ID, signal } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { ProjectImage } from '../../../Shared/Interfaces/project-image';
-import { TitleCasePipe } from '@angular/common';
+import { isPlatformBrowser, TitleCasePipe } from '@angular/common';
 import { ProjectDet } from '../../../Shared/Interfaces/project-det';
 
 
@@ -29,6 +29,18 @@ export class ProjectDetails implements OnInit {
   projectPath =  'https://raw.githubusercontent.com/Mahmoud1780/Al-Aik-images/refs/heads/main/Projects/';
   // projectPath =  'assets/Projects/';
 
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+
+  ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      const slug = params['slug'];
+      this.loadProject(slug);
+      // FIXED: Scroll to top when navigating to a new project
+      if (isPlatformBrowser(this.platformId)) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    });
+  }
   // Sample project data with gallery images
   private projects: (ProjectDet  & { gallery: ProjectImage[] })[] = [
     {
@@ -316,15 +328,7 @@ export class ProjectDetails implements OnInit {
       ]
     }
   ];
-
-  ngOnInit(): void {
-    this.route.params.subscribe(params => {
-      const slug = params['slug'];
-      this.loadProject(slug);
-      // FIXED: Scroll to top when navigating to a new project
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  }
+  
 
   private loadProject(slug: string): void {
     this.loading.set(true);

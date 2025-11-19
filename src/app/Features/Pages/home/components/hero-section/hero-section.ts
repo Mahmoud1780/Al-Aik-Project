@@ -1,4 +1,5 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { AfterViewInit, Component, ElementRef, Inject, OnInit, PLATFORM_ID, ViewChild } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -12,15 +13,39 @@ export class HeroSection implements AfterViewInit {
   // assets/slogan.mp4';
   logoPath = 'assets/images/logo.jpg';
 
-  @ViewChild('videoPlayer') videoPlayer!: ElementRef<HTMLVideoElement>;
-
+ @ViewChild('videoPlayer', { static: false }) videoPlayer?: ElementRef<HTMLVideoElement>;
+  
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+  
   ngAfterViewInit(): void {
-    if (this.videoPlayer?.nativeElement) {
-      const video = this.videoPlayer.nativeElement;
-      video.muted = true;
-      video.play().catch(error => {
-        console.error('Error attempting to play the video:', error);
-      });
+    // Only run in browser environment
+    if (isPlatformBrowser(this.platformId)) {
+      // Use setTimeout to ensure DOM is fully ready
+      setTimeout(() => {
+        this.initializeVideo();
+      }, 100);
+    }
   }
+  
+  private initializeVideo(): void {
+    if (!this.videoPlayer?.nativeElement) {
+      console.error('Video player reference not found');
+      return;
+    }
+    
+    const video = this.videoPlayer.nativeElement;
+    
+    if (!(video instanceof HTMLVideoElement)) {
+      console.error('Referenced element is not a video element');
+      return;
+    }
+    
+    video.muted = true;
+    video.playsInline = true;
+    
+    // Play the video
+    video.play().catch(error => {
+      console.error('Error attempting to play the video:', error);
+    });
   }
 }

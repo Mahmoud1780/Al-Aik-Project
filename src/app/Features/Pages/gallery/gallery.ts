@@ -1,7 +1,7 @@
-import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, Inject, OnInit, PLATFORM_ID, ViewChild } from '@angular/core';
 import { GalleryImage } from '../../../Shared/Interfaces/gallery-image';
 import { Router } from '@angular/router';
-import { TitleCasePipe } from '@angular/common';
+import { isPlatformBrowser, TitleCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-gallery',
@@ -47,11 +47,13 @@ export class Gallery implements OnInit {
 
   ];
 
-  constructor(private router: Router) {}
+  constructor(@Inject(PLATFORM_ID) private platformId: Object, private router: Router) {}
 
   ngOnInit(): void {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    this.setVideoStartTime();
+    if (isPlatformBrowser(this.platformId)) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      this.setVideoStartTime();
+    }
   }
 
   get filteredImages(): GalleryImage[] {

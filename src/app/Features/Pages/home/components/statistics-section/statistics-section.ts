@@ -9,7 +9,8 @@ import { StatItem } from '../../../../../Shared/Interfaces/stat-item';
   styleUrl: './statistics-section.css'
 })
 export class StatisticsSection implements OnInit, OnDestroy, AfterViewInit {
-  @ViewChild('statsSection', { static: true }) statsSection!: ElementRef;
+  // Changed to static: false
+  @ViewChild('statsSection', { static: false }) statsSection!: ElementRef;
 
   stats: StatItem[] = [
     { value: 350, title: 'Projects Completed', suffix: '+' },
@@ -22,7 +23,7 @@ export class StatisticsSection implements OnInit, OnDestroy, AfterViewInit {
   private animationFrameId: number | null = null;
   private duration: number = 2500;
   private observer: IntersectionObserver | null = null;
-  private hasAnimated: boolean = false; // Prevent re-triggering
+  private hasAnimated: boolean = false;
   
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
@@ -31,15 +32,18 @@ export class StatisticsSection implements OnInit, OnDestroy, AfterViewInit {
   ) {}
 
   ngOnInit(): void {
-    // Don't start animation immediately - wait for scroll trigger
+    // Initialize with zeros for client-side, final values for SSR
+    if (!isPlatformBrowser(this.platformId)) {
+      this.animatedValues = this.stats.map(stat => stat.value);
+    }
   }
 
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
-      this.setupIntersectionObserver();
-    } else {
-      // Set final values for server-side rendering
-      this.animatedValues = this.stats.map(stat => stat.value);
+      // Wrap in setTimeout to avoid ExpressionChangedAfterItHasBeenCheckedError
+      setTimeout(() => {
+        this.setupIntersectionObserver();
+      }, 0);
     }
   }
 
@@ -54,21 +58,18 @@ export class StatisticsSection implements OnInit, OnDestroy, AfterViewInit {
   }
 
   private setupIntersectionObserver(): void {
-    // Create intersection observer with options
     const options = {
-      root: null, // Use viewport as root
-      rootMargin: '0px 0px -50px 0px', // Trigger when section is 50px into viewport
-      threshold: 0.2 // Trigger when 20% of the section is visible
+      root: null,
+      rootMargin: '0px 0px -50px 0px',
+      threshold: 0.2
     };
 
     this.observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting && !this.hasAnimated) {
-          // Section is now visible, start the animation
           this.startCountingAnimation();
-          this.hasAnimated = true; // Prevent re-triggering
+          this.hasAnimated = true;
           
-          // Stop observing after first trigger - animation will continue regardless of scroll
           if (this.observer) {
             this.observer.unobserve(entry.target);
             this.observer.disconnect();
@@ -78,8 +79,7 @@ export class StatisticsSection implements OnInit, OnDestroy, AfterViewInit {
       });
     }, options);
 
-    // Start observing the statistics section
-    if (this.statsSection) {
+    if (this.statsSection?.nativeElement) {
       this.observer.observe(this.statsSection.nativeElement);
     }
   }
@@ -87,48 +87,35 @@ export class StatisticsSection implements OnInit, OnDestroy, AfterViewInit {
   private startCountingAnimation(): void {
     const startTime = performance.now();
     
-    // Run animation outside Angular zone to avoid change detection issues
     this.ngZone.runOutsideAngular(() => {
       const animate = (currentTime: number) => {
         const elapsedTime = currentTime - startTime;
         const progress = Math.min(elapsedTime / this.duration, 1);
         
-        // Smooth easing function
         const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
         const smoothProgress = easeOutCubic(progress);
         
-        // Update values with smooth progression
         this.animatedValues = this.stats.map((stat) => {
           const currentValue = smoothProgress * stat.value;
           return Math.round(currentValue);
         });
         
-        // Trigger change detection manually to update the view
-        this.ngZone.run(() => {
-          this.cdr.detectChanges();
-        });
+        // Only trigger change detection, don't mark for check multiple times
+        this.cdr.detectChanges();
         
-        // Continue animation until completion, regardless of scrolling
         if (progress < 1) {
           this.animationFrameId = requestAnimationFrame(animate);
         } else {
-          // Ensure final values are exact
           this.animatedValues = this.stats.map(stat => stat.value);
           this.animationFrameId = null;
-          
-          // Final change detection update
-          this.ngZone.run(() => {
-            this.cdr.detectChanges();
-          });
+          this.cdr.detectChanges();
         }
       };
       
-      // Start the animation - this will continue uninterrupted
       this.animationFrameId = requestAnimationFrame(animate);
     });
   }
 
-  // Method to manually reset and re-trigger animation (optional)
   resetAnimation(): void {
     this.hasAnimated = false;
     this.animatedValues = [0, 0, 0, 0];
@@ -137,11 +124,13 @@ export class StatisticsSection implements OnInit, OnDestroy, AfterViewInit {
       cancelAnimationFrame(this.animationFrameId);
     }
     
-    // Re-setup observer if needed
     if (this.observer) {
       this.observer.disconnect();
-      this.setupIntersectionObserver();
     }
+    
+    setTimeout(() => {
+      this.setupIntersectionObserver();
+    }, 0);
   }
 
   formatNumber(value: number): string {

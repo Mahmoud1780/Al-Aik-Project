@@ -12,25 +12,25 @@ export class ClientTestimonial implements OnInit, OnDestroy {
     {
       id: 1,
       content: "From the initial 3D design to the final installation, the team was professional, creative, and reliable. Our outdoor space is now the envy of the neighborhood. Highly recommended!",
-      author: "Sarah Johnson",
+      author: "Norah Maged",
       role: "Property Manager",
-      image: "https://randomuser.me/api/portraits/women/44.jpg",
+      image: "https://randomuser.me/api/portraits/women/45.jpg",
       rating: 5
     },
     {
       id: 2,
       content: "The team transformed our backyard into a paradise. Their attention to detail and creative solutions exceeded our expectations. We couldn't be happier with the results!",
-      author: "Robert Chen",
+      author: "Mohamad AL Hashimi",
       role: "Homeowner",
-      image: "https://randomuser.me/api/portraits/men/32.jpg",
+      image: "https://randomuser.me/api/portraits/men/30.jpg",
       rating: 5
     },
     {
       id: 3,
       content: "Professional from start to finish. They listened to our ideas and incorporated them perfectly while adding their expert touch. The pool and landscape look amazing together.",
-      author: "Michael Torres",
+      author: "Mr. Ali Salah",
       role: "Business Owner",
-      image: "https://randomuser.me/api/portraits/men/22.jpg",
+      image: "https://randomuser.me/api/portraits/men/7.jpg",
       rating: 5
     }
   ];
